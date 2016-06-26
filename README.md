@@ -10,7 +10,7 @@ Nevermorte is a web application inspired by Evernote that will be build using Ru
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] A production README, replacing this README (**NB**: check out the [sample production README](docs/production_readme.md) -- you'll write this later)
+- [ ] A production README, replacing this README
 - [ ] Notes
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
