@@ -18,7 +18,7 @@ author_id   | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
 description | string    |
 
-## reminders
+<!-- bonus feature: ## reminders
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -26,7 +26,7 @@ user_id     | integer   | not null, foreign key (references users), indexed
 note_id     | string    | not null, foreign key (references notes), indexed
 date        | datetime  | not null
 type        | string    | not null
-prev_id     | integer   | foreign key (references reminders), indexed
+prev_id     | integer   | foreign key (references reminders), indexed -->
 
 ## tags
 column name | data type | details
