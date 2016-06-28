@@ -1,0 +1,22 @@
+<img src="" alt="Raven Logo" />
+<h1>Create Account</h1>
+
+<form class="sign-up" action="<%= users_url %>" method="post">
+  <%= auth_token %>
+
+  <label>Username or Email:
+    <input type="text" name="user[username]" value="<%= @user.username %>">
+  </label>
+
+  <label>Create a Password:
+    <input type="password" name="user[password]">
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <span><%= error + "." %></span>
+      <% end %>
+    <% end %>
+  </label>
+
+  <button type="submit">Create Account</button>
+
+</form>
