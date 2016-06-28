@@ -77,9 +77,3 @@ test:
 #
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
-#
-production:
-  <<: *default
-  database: Nevermorte_production
-  username: Nevermorte
-  password: <%= ENV['NEVERMORTE_DATABASE_PASSWORD'] %>
