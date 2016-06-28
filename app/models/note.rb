@@ -13,7 +13,7 @@
 #
 
 class Note < ActiveRecord::Base
-  validates (
+  validates(
     :title,
     :body,
     :author_id,
