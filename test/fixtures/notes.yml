@@ -7,7 +7,6 @@
 #  body        :text             not null
 #  author_id   :integer          not null
 #  notebook_id :string           not null
-#  archived    :boolean          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -19,11 +18,9 @@ one:
   body: MyText
   author_id: 1
   notebook_id: MyString
-  archived: false
 
 two:
   title: MyString
   body: MyText
   author_id: 1
   notebook_id: MyString
-  archived: false

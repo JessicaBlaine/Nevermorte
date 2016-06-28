@@ -7,7 +7,6 @@
 #  body        :text             not null
 #  author_id   :integer          not null
 #  notebook_id :string           not null
-#  archived    :boolean          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
@@ -18,7 +17,6 @@ class Note < ActiveRecord::Base
     :body,
     :author_id,
     :notebook_id,
-    :archived,
     presence: true
   )
 

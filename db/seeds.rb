@@ -12,7 +12,6 @@ Note.create(
   title: "The Raven",
   author_id: user.id,
   notebook_id: 1,
-  archived: true,
   body: '''
   Once upon a midnight dreary, while I pondered, weak and weary,
 Over many a quaint and curious volume of forgotten lore—
