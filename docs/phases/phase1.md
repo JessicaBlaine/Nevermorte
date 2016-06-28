@@ -2,19 +2,19 @@
 
 ## Rails
 ### Models
-* [ ] User
-* [ ] Note
+* [x] User
+* [x] Note
 
 ### Controllers
-* [ ] UsersController (create, new)
-* [ ] SessionsController (create, new, destroy)
-* [ ] Api::NotesController (create, destroy, index, show, update)
+* [x] UsersController (create, new)
+* [x] SessionsController (create, new, destroy)
+* [x] Api::NotesController (create, destroy, index, show, update)
 
 ### Views
-* [ ] users/new.html.erb
-* [ ] session/new.html.erb
-* [ ] notes/index.json.jbuilder
-* [ ] notes/show.json.jbuilder
+* [x] users/new.html.erb
+* [x] session/new.html.erb
+* [x] notes/index.json.jbuilder
+* [x] notes/show.json.jbuilder
 
 ## Flux
 ### Views (React Components)

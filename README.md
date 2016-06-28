@@ -9,7 +9,7 @@
 Nevermorte is a web application inspired by Evernote that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [x] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
 - [ ] Notes
   - [ ] Smooth, bug-free navigation
@@ -47,21 +47,21 @@ Nevermorte is a web application inspired by Evernote that will be build using Ru
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
-- [ ] create `User` model
-- [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
+- [x] create new project
+- [x] create `User` model
+- [x] authentication
+- [x] user signup/signin pages
+- [x] blank landing page after signin
 
 ### Phase 2: Notes Model, API, and basic APIUtil (1.5 days, W1 Th 12pm)
 
 **Objective:** Notes can be created, read, edited and destroyed through
 the API.
 
-- [ ] create `Note` model
-- [ ] seed the database with a small amount of test data
+- [x] create `Note` model
+- [x] seed the database with a small amount of test data
 - [ ] CRUD API for notes (`NotesController`)
-- [ ] jBuilder views for notes
+- [x] jBuilder views for notes
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] test out API interaction in the console.
