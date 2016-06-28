@@ -60,7 +60,7 @@ the API.
 
 - [x] create `Note` model
 - [x] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
+- [x] CRUD API for notes (`NotesController`)
 - [x] jBuilder views for notes
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
