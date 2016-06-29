@@ -11,6 +11,15 @@ const NoteForm = React.createClass({
       notebook_id: note.notebook_id
     };
   },
+  componentWillReceiveProps(newProps) {
+    const newNote = newProps.note;
+    this.setState({
+      id: newNote.id,
+      title: newNote.title,
+      body: newNote.body,
+      notebook_id: newNote.notebook_id
+    });
+  },
   handleChange(attr, event) {
     clearTimeout(this.idleTimeout);
     // save after 5 second idle
@@ -27,13 +36,14 @@ const NoteForm = React.createClass({
   render() {
     return <form onSubmit={this.handleSubmit} onBlur={this.saveChanges}>
       <input onChange={this.handleChange.bind(null, 'title')}
-                value={this.state.title}/>
+        value={this.state.title}/>
 
       <input onChange={this.handleChange.bind(null, 'notebook_id')}
-                value={this.state.notebook_id}/>
+        value={this.state.notebook_id}/>
 
-      <input onChange={this.handleChange.bind(null, 'body')}
-                value={this.state.body}/>
+      <textarea row={8} col={8}
+        onChange={this.handleChange.bind(null, 'body')}
+        value={this.state.body}/>
     </form>;
   }
 });
