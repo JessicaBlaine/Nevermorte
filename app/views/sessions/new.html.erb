@@ -1,5 +1,8 @@
-<img src="" alt="Raven Logo" />
-<h1>Sign in</h1>
+
+<header>
+  <img src="https://s-media-cache-ak0.pinimg.com/236x/ab/0d/32/ab0d32a00761b5561244a185ce5453ac.jpg" alt="Raven Logo" />
+  <h1>Sign in</h1>
+</header>
 
 <div class="sign-in">
   <form action="<%= session_url %>" method="post">
@@ -11,11 +14,13 @@
 
     <label>Password:
       <input type="password" name="user[password]" value="">
-      <% if flash[:errors] %>
-        <% flash[:errors].each do |error| %>
-          <span><%= error + "." %></span>
+      <ul>
+        <% if flash[:errors] %>
+          <% flash[:errors].each do |error| %>
+            <li><%= error + "." %></li>
+          <% end %>
         <% end %>
-      <% end %>
+      </ul>
     </label>
 
     <button type="submit">Sign in</button>
