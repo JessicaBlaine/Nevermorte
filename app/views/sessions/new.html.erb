@@ -1,5 +1,5 @@
 
-<header>
+<header class="sign-in">
   <img src="https://s-media-cache-ak0.pinimg.com/236x/ab/0d/32/ab0d32a00761b5561244a185ce5453ac.jpg" alt="Raven Logo" />
   <h1>Sign in</h1>
 </header>
@@ -27,7 +27,7 @@
 
   </form>
 
-  <form class="demo-login" action="<%= session_url %>" method="post">
+  <form class="sign-in" action="<%= session_url %>" method="post">
     <%= auth_token %>
     <input type="hidden" name="user[username]" value="EdgarAllenPoe">
     <input type="hidden" name="user[password]" value="password">
@@ -36,7 +36,7 @@
   </form>
 </div>
 
-<footer>
+<footer class="sign-in">
   <span>Don't have an account?</span>
   <a href="<%= new_user_url %>">Create account</a>
 </footer>

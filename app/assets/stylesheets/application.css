@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ 
+body, header, h1, li, ul, footer, form, input, img, label, button, span, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-family: 'Lato', sans-serif;
+    text-decoration: inherit;
+    list-style: none;
+}
 
 * {
     -webkit-box-sizing: border-box;

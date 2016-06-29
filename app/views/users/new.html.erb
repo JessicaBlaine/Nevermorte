@@ -1,32 +1,34 @@
 
-<header>
+<header class="sign-in">
   <img src="https://s-media-cache-ak0.pinimg.com/236x/ab/0d/32/ab0d32a00761b5561244a185ce5453ac.jpg" alt="Raven Logo" />
   <h1>Create Account</h1>
 </header>
 
-<form class="sign-up" action="<%= users_url %>" method="post">
-  <%= auth_token %>
+<div class="sign-in">
+  <form  action="<%= users_url %>" method="post">
+    <%= auth_token %>
 
-  <label>Username or Email:
-    <input type="text" name="user[username]" value="<%= @user.username %>">
-  </label>
+    <label>Username or Email:
+      <input type="text" name="user[username]" value="<%= @user.username %>">
+    </label>
 
-  <label>Create a Password:
-    <input type="password" name="user[password]">
-    <ul>
-      <% if flash[:errors] %>
-        <% flash[:errors].each do |error| %>
-          <li><%= error + "." %></li>
+    <label>Create a Password:
+      <input type="password" name="user[password]">
+      <ul>
+        <% if flash[:errors] %>
+          <% flash[:errors].each do |error| %>
+            <li><%= error + "." %></li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
-  </label>
+      </ul>
+    </label>
 
-  <button type="submit">Create Account</button>
+    <button type="submit">Create Account</button>
 
-</form>
+  </form>
+</div>
 
-<footer>
+<footer class="sign-in">
   <span>Already have an account?</span>
   <a href="<%= new_session_url %>">Sign in</a>
 </footer>

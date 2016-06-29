@@ -2,28 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body, header, h1, li, ul, footer, form, input, img, label, button, span, a {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    font-family: 'Lato', sans-serif;
-    text-decoration: inherit;
-    list-style: none;
-}
-
-$base-color: #403075;
-$light-color: #6956A8;
-$highlight-color: #A691EB;
-$dark-color: #1F1442;
-$shade-color: #06030F;
-
+@import "colors";
 
 body {
     background: white;
 }
 
-header {
+header.sign-in {
     margin: 0 auto;
     border-bottom: 1px solid $light-color;
     background-color: white;
@@ -40,7 +25,7 @@ header {
     }
 }
 
-form {
+div.sign-in {
     color: $base-color;
     font-family: 'Lato', sans-serif;;
     text-align: center;
@@ -73,7 +58,7 @@ form {
             margin: auto;
             display: block;
             width: 80%;
-           
+
             border-left: 1px solid #e4a197;
             border-right: 1px solid #e4a197;
             background-color: #ffd1d1;
@@ -89,7 +74,7 @@ form {
             }
         }
     }
-    
+
     button {
         width: 90%;
         margin: 20px 0 0 0;
@@ -105,11 +90,7 @@ form {
     }
 }
 
-.demo-login button {
-
-}
-
-footer {
+footer.sign-in {
     margin: auto;
     color: black;
     text-align: center;
@@ -126,4 +107,3 @@ footer {
         color: $light-color;
     }
 }
-
