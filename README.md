@@ -72,7 +72,7 @@ the API.
 user interface.
 
 - [x] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [x] setup React Router
 - implement each note component, building out the flux loop as needed.
   - [x] `NotesIndex`
   - [x] `NoteIndexItem`
