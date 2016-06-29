@@ -71,13 +71,13 @@ the API.
 **Objective:** Notes can be created, read, edited and destroyed with the
 user interface.
 
-- [ ] setup the flux loop with skeleton files
+- [x] setup the flux loop with skeleton files
 - [ ] setup React Router
 - implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle
+  - [x] `NotesIndex`
+  - [x] `NoteIndexItem`
+  - [x] `NoteForm`
+- [x] save Notes to the DB when the form loses focus or is left idle
   after editing.
 
 ### Phase 4: Start Styling (0.5 days, W2 M 12pm)
