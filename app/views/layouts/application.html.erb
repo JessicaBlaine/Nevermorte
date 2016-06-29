@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Logout", session_url, method: :delete %>
+<%= link_to "Logout", session_url, method: :delete %>
 
 <%= current_user.try(:username) %>
 

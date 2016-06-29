@@ -17,7 +17,7 @@ class Api::NotesController < ApplicationController
     if @note.save
       render :show
     else
-      render json: { base: @note.errors.full_messages, status: 422 }
+      render json: { errors: @note.errors.full_messages}, status: 422
     end
   end
 
@@ -27,7 +27,7 @@ class Api::NotesController < ApplicationController
     if @note && @note.author_id == current_user.id && @note.update(note_params)
       render :show
     else
-      render json: { base: ["Invalid update request"], status: 422 }
+      render json: { errors: ["Invalid update request"]}, status: 422
     end
   end
 
@@ -36,7 +36,7 @@ class Api::NotesController < ApplicationController
     if @note.author_id == current_user.id && @note.destroy
       render :show, status: 200
     else
-      render json: { base: ["Unauthorized deletion attempt"], status: 401 }
+      render json: { errors: ["Unauthorized deletion attempt"]}, status: 403
     end
   end
 
@@ -48,7 +48,7 @@ class Api::NotesController < ApplicationController
   def require_login
     unless current_user
       flash[:error] = "You must be logged in to access this section"
-      redirect_to new_session_url
+      render json: { errors: ["This resource requires login"]}, status: 302
     end
   end
 end

@@ -34,7 +34,7 @@ module.exports = {
       error: onError
     });
   },
-  deleteNote(id, onSuccess, onError) {
+  destroyNote(id, onSuccess, onError) {
     $.ajax({
       url: `api/notes/${id}`,
       method: 'DELETE',
