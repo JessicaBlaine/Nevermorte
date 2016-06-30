@@ -5,9 +5,7 @@
 @import 'colors';
 @import 'hover_transition';
 
-#root {
-    background: whitesmoke;
-}
+
 
 html {
   height: 100%;
@@ -15,19 +13,20 @@ html {
     height: 100%;
     #root {
       height: 100%;
-      div {
-        height: 100%;
-      }
     }
   }
+}
+
+.notes-index-container {
+    height: 100%;
+    display: flex;
 }
 
 .notes-index {
     height: 100%;
     border-radius: 2px;
     background: white;
-    display: inline-block;
-    vertical-align: top;
+    flex: none;
     width: 350px;
     margin-left: 75px;
     border-bottom: 1px solid $highlight-color;
@@ -81,10 +80,15 @@ html {
 }
 
 .note-form {
-     display: inline-block;
-     vertical-align: top;
+     flex: 1;
      textarea {
          width: 100%;
-         height: 100%;
+         height: 90%;
+         border: none;
+         resize: none;
+         outline: none;
+     }
+     input {
+         height: 5%;
      }
 }

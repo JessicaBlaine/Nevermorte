@@ -2,6 +2,7 @@
 @import "colors";
 @import "hover_transition";
 
+
 header.splash {
   background: white;
   border-bottom: 1px solid $highlight-color;
@@ -35,38 +36,85 @@ header.splash {
   }
 }
 div.splash {
+  min-width: 675px;
+/*   max-width: 1100px; */
+  margin: 0 auto;
   position: relative;
-  overflow: overlay;
   .splash-image {
-    background-image: url("http://i.imgur.com/eeXpXpX.jpg");
     margin: 0 auto;
+    background: url(http://i.imgur.com/Q6KGJjQ.jpg);
+    // background: url(http://i.imgur.com/eubg3zl.jpg);
+    // background: url("http://i.imgur.com/eeXpXpX.jpg");
     display: block;
-    background-size: cover;
-    max-width: 1000px;
+    background-size: 100% auto;
+    width: 100%;
     height: auto;
+    padding-bottom: 55%;
+
+  }
+  .caption {
+    position: absolute;
+    width: 510px;
+    left: 40px;
+    bottom: 60px;
     
+    h1 {
+      font-size: 46px;
+      color: whitesmoke;
+      text-shadow: 0px 0px 10px $base-color;
+    }
+    p {
+      font-weight: 400;
+      font-size: 26px;
+      font-weight: 300;
+      color: white;
+      text-shadow: 0px 0px 10px $base-color;
+    }
+    a {
+      float: right;
+      display: inline-block;
+      text-align: center;
+      color: $dark-color;
+      background: $highlight-color;
+      margin: 20px 30px 0 0;
+      padding: 15px 40px;
+      border-radius: 5px;
+      @include hover-transition;
+    }
+    a:hover {
+      color: white;
+      background: $light-color;
+
+    }
   }
 }
 
 .story {
-  max-width: 1000px;
-  margin: 0 auto;
+  
+  
+  background: whitesmoke;
   .story-item {
-    margin: 25px;
+    margin: 25px auto;
+    max-width: 900px;
+    min-width: 680px;
     overflow: overlay;
+    border-top: 1px solid $light-color;
+    border-bottom: 1px solid $light-color;
+    padding-top: 25px;
     .note {
       margin-left: 25px;
+      margin-right: 25px;
       background: url('http://i.imgur.com/tPHa1ML.jpg');
       background-size: cover;
       border-radius: 5px;
-      height: 200px;
-      width: 300px;
+      height: 220px;
+      width: 330px;
       float: right;
     }
     .story-content {
       max-width: 400px;
       margin-left: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 35px;
       color: $light-color;
       h2 {
         font-size: 38px;
@@ -78,4 +126,3 @@ div.splash {
     }
   }
 }
-  

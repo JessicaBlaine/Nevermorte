@@ -44,3 +44,15 @@ body, figure, textarea header, h1, h2, h4, h5, p, li, ul, footer, form, input, i
   width: 100px;
   height: 100px;
 }
+
+h1:hover, h2:hover, p:hover {
+  cursor: default;
+}
+
+#root > div {
+  height: 100%;
+}
+
+input {
+  outline: none;
+}

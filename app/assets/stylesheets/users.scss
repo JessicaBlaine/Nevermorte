@@ -99,9 +99,9 @@ footer.sign-in {
     border-top: 1px solid $highlight-color;
     background-color: #f3f3f3;
     a {
+        display: inline-block;
         text-align: center;
         margin: 0 auto;
-        width: 135px;
         border-bottom: 1px solid transparent;
         color: $dark-color;
         @include hover-transition;

@@ -35,14 +35,13 @@ const NoteForm = React.createClass({
   },
   render() {
     return <form className="note-form" onSubmit={this.handleSubmit} onBlur={this.saveChanges}>
-      <input onChange={this.handleChange.bind(null, 'title')}
-        value={this.state.title}/>
-
       <input onChange={this.handleChange.bind(null, 'notebook_id')}
         value={this.state.notebook_id}/>
 
-      <textarea row={8} col={8}
-        onChange={this.handleChange.bind(null, 'body')}
+      <input onChange={this.handleChange.bind(null, 'title')}
+        value={this.state.title}/>
+
+      <textarea onChange={this.handleChange.bind(null, 'body')}
         value={this.state.body}/>
     </form>;
   }

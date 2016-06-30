@@ -35,7 +35,7 @@ const NotesIndex = React.createClass({
     });
   },
   render() {
-    return <div >
+    return <div className="notes-index-container">
 
       <ul className="notes-index">
         <header>
