@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
- 
-body, header, h1, li, ul, footer, form, input, img, label, button, span, a {
+
+body, figure, header, h1, li, ul, footer, form, input, img, label, button, span, a {
     margin: 0;
     padding: 0;
     border: 0;
@@ -22,6 +22,7 @@ body, header, h1, li, ul, footer, form, input, img, label, button, span, a {
     font-family: 'Lato', sans-serif;
     text-decoration: inherit;
     list-style: none;
+    display: block;
 }
 
 * {
@@ -30,3 +31,16 @@ body, header, h1, li, ul, footer, form, input, img, label, button, span, a {
           box-sizing: border-box;
 }
 
+.group:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.logo-image {
+  background-image:  url('https://s-media-cache-ak0.pinimg.com/236x/ab/0d/32/ab0d32a00761b5561244a185ce5453ac.jpg');
+  background-size: cover;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}

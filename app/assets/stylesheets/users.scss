@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "colors";
+@import "hover_transition";
 
 body {
     background: white;
@@ -19,9 +20,6 @@ header.sign-in {
     h1 {
         font-size: 36px;
        font-weight: 300;
-    }
-    img {
-        width: 100px;
     }
 }
 
@@ -77,11 +75,12 @@ div.sign-in {
 
     button {
         width: 90%;
-        margin: 20px 0 0 0;
+        margin: 20px auto 0 auto;
         padding: 10px;
         border-radius: 5px;
         background: $base-color;
         color: white;
+        @include hover-transition
 
     }
     button:hover {
@@ -100,10 +99,16 @@ footer.sign-in {
     border-top: 1px solid $highlight-color;
     background-color: #f3f3f3;
     a {
-        margin: 0 10px;
+        text-align: center;
+        margin: 0 auto;
+        width: 135px;
+        border-bottom: 1px solid transparent;
         color: $dark-color;
+        @include hover-transition;
     }
     a:hover {
+
+        border-bottom: 1px solid $light-color;
         color: $light-color;
     }
 }

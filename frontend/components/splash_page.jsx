@@ -4,16 +4,19 @@ const SplashPage = React.createClass({
 
   render() {
     return <div>
-      <header>
-        <a href="/">
-          <img src="" alt="Raven Logo Nevermorte"/>
-        </a>
-        <a href="/Login">Sign in</a>
+      <header className="splash group">
+        <div className="row">
+          <a className="group logo" href="/">
+            <div className="logo-image"/>
+            <h1>Nevermorte</h1>
+          </a>
+          <a className="link" href="/Login">Sign in</a>
+        </div>
       </header>
-      <figure>
-        <img src="" alt="large splash page image"/>
+      <figure className="splash">
+        <div className="splash-image"/>
         <figcaption>
-          <h1>Make a Note of it With Nevermorte</h1>
+          <h1>Make a Note of it with Nevermorte</h1>
           <p>Big ideas, little details, and everything in between. Anything that matters to you can be captured in a note, ready for when you need it.</p>
           <a href="/Signup">Try it Now</a>
         </figcaption>

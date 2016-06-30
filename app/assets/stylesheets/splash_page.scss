@@ -1,0 +1,43 @@
+
+@import "colors";
+@import "hover_transition";
+
+header.splash {
+  background: white;
+  border-bottom: 1px solid $highlight-color;
+  .logo-image {
+    float: left;
+  }
+  .row {
+    max-width: 900px;
+  }
+  .logo {
+    margin-left: 25px;
+    float: left;
+    width: 420px;
+    font-size: 56px;
+    color: $base-color;
+    h1 {
+      margin-top: 25px;
+    }
+  }
+  .link {
+    float: right;
+    margin: 50px 10px 10px 0;
+    color: $highlight-color;
+    border-bottom: 1px solid transparent;
+    @include hover-transition;
+  }
+  .link:hover {
+    color: $light-color;
+    border-bottom: 1px solid $light-color;
+  }
+}
+
+figure.splash {
+  .splash-image {
+    display: block;
+    background: url("http://i.imgur.com/eeXpXpX.jpg");
+    background-size: cover;
+  }
+}

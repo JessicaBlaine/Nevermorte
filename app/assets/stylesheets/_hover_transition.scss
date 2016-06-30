@@ -1,0 +1,10 @@
+
+@mixin hover-transition {
+  transition: border 0.3s ease-in-out 0s, 
+    color 0.3s ease-in-out 0s,
+    background-color 0.3 ease-in-out 0s;
+    transition-property: border, color, background-color;
+    transition-duration: 0.3s, 0.3s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
+  }
