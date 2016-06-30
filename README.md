@@ -84,7 +84,7 @@ user interface.
 
 **Objective:** Existing pages (including signup/signin) will look good.
 
-- [ ] create a basic style guide
+- [x] create a basic style guide
 - [ ] position elements on the page
 - [ ] add basic colors & styles
 

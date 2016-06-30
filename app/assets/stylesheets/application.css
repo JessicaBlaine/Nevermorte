@@ -14,7 +14,7 @@
  *= require_self
  */
 
-body, figure, header, h1, li, ul, footer, form, input, img, label, button, span, a {
+body, figure, textarea header, h1, h2, h4, h5, p, li, ul, footer, form, input, img, label, button, span, a {
     margin: 0;
     padding: 0;
     border: 0;

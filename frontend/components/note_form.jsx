@@ -34,7 +34,7 @@ const NoteForm = React.createClass({
     NoteActions.editNote(this.state);
   },
   render() {
-    return <form onSubmit={this.handleSubmit} onBlur={this.saveChanges}>
+    return <form className="note-form" onSubmit={this.handleSubmit} onBlur={this.saveChanges}>
       <input onChange={this.handleChange.bind(null, 'title')}
         value={this.state.title}/>
 

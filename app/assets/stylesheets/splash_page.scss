@@ -10,6 +10,7 @@ header.splash {
   }
   .row {
     max-width: 900px;
+    margin: 0 auto;
   }
   .logo {
     margin-left: 25px;
@@ -33,11 +34,48 @@ header.splash {
     border-bottom: 1px solid $light-color;
   }
 }
-
-figure.splash {
+div.splash {
+  position: relative;
+  overflow: overlay;
   .splash-image {
+    background-image: url("http://i.imgur.com/eeXpXpX.jpg");
+    margin: 0 auto;
     display: block;
-    background: url("http://i.imgur.com/eeXpXpX.jpg");
     background-size: cover;
+    max-width: 1000px;
+    height: auto;
+    
   }
 }
+
+.story {
+  max-width: 1000px;
+  margin: 0 auto;
+  .story-item {
+    margin: 25px;
+    overflow: overlay;
+    .note {
+      margin-left: 25px;
+      background: url('http://i.imgur.com/tPHa1ML.jpg');
+      background-size: cover;
+      border-radius: 5px;
+      height: 200px;
+      width: 300px;
+      float: right;
+    }
+    .story-content {
+      max-width: 400px;
+      margin-left: 20px;
+      margin-bottom: 20px;
+      color: $light-color;
+      h2 {
+        font-size: 38px;
+      }
+      p {
+        font-weight: 300;
+        font-size: 24px;
+      }
+    }
+  }
+}
+  
