@@ -1,6 +1,7 @@
 const AppDispatcher = require('../dispatcher/dispatcher');
 const NotebookConstants = require('../constants/notebook_constants');
 const NotebookApiUtil = require('../util/notebook_api_util');
+const NoteConstants = require('../constants/note_constants');
 
 module.exports = {
   fetchNotebooks() {
@@ -34,6 +35,10 @@ module.exports = {
     AppDispatcher.dispatch({
       actionType: NotebookConstants.NOTEBOOK_RECEIVED,
       notebook: notebook
+    });
+    AppDispatcher.dispatch({
+      actionType: NoteConstants.NOTES_RECEIVED,
+      notes: notebook.notes
     });
   },
   removeNotebook(notebook) {

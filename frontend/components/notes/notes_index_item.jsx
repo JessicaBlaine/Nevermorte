@@ -1,6 +1,6 @@
 const React = require('react');
-const prettyDate = require('../util/pretty_date');
-const NoteActions = require('../actions/note_actions');
+const prettyDate = require('../../util/pretty_date');
+const NoteActions = require('../../actions/note_actions');
 
 const NotesIndexItem = React.createClass({
   render() {

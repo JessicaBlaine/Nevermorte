@@ -1,12 +1,12 @@
 const React = require('react');
-// flux
-const NoteStore = require('../stores/note_store');
-const NoteActions = require('../actions/note_actions');
-// components
-const NotesIndexItem = require('./notes_index_item');
-const NoteForm = require('./note_form');
 
-const NotesIndex = React.createClass({
+const NotebookStore = require('../../stores/notebook_store');
+const NoteStore = require('../../stores/note_store');
+const NotebookActions = require('../../actions/notebook_actions');
+const NoteActions = require('../../actions/note_actions');
+const NotesIndexItem = require('../notes/notes_index_item');
+
+const NotebookIndexItem = React.createClass({
   getInitialState: function() {
     return {
       notes: NoteStore.all(),
@@ -21,10 +21,10 @@ const NotesIndex = React.createClass({
   },
   componentDidMount() {
     this.storeListener = NoteStore.addListener(this._onChange);
-    NoteActions.fetchNotes();
+    NotebookActions.getNotebook(this.props.params.notebookId);
   },
   componentWillUnmount() {
-    NoteStore.removeListener(this.storeListener);
+    this.storeListener.remove();
   },
   _onChange() {
     console.log("changing");
@@ -43,12 +43,15 @@ const NotesIndex = React.createClass({
       body: "and start typing",
       notebook_id: 0
     });
+    NotebookActions.getNotebook(this.props.params.notebookId);
   },
   render() {
+    let noteBook = NotebookStore.find(this.props.params.notebookId);
+    let title = noteBook ? noteBook.title : "";
     return <div className="notes-index-container">
       <div>
         <header>
-          <h1>NOTES</h1>
+          <h1>{title}</h1>
           <span>{this.state.notes.length + " notes"}</span>
         </header>
         <ul className="notes-index">
@@ -70,4 +73,4 @@ const NotesIndex = React.createClass({
   }
 });
 
-module.exports = NotesIndex;
+module.exports = NotebookIndexItem;

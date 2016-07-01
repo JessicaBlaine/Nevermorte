@@ -1,6 +1,6 @@
 const React = require('react');
-const NoteActions = require('../actions/note_actions');
-const NoteStore = require('../stores/note_store');
+const NoteActions = require('../../actions/note_actions');
+const NoteStore = require('../../stores/note_store');
 
 const NoteForm = React.createClass({
   getInitialState: function() {
