@@ -34,7 +34,7 @@ NoteStore.find = function(id) {
 };
 
 NoteStore.all = function() {
-  return Object.assign([], _notes);
+  return Object.keys(_notes).map(key => _notes[key] );
 };
 
 module.exports = NoteStore;

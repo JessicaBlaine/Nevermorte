@@ -7,7 +7,7 @@ const NotesIndexItem = React.createClass({
       let body = this.props.note.body;
       body = body.length <= 90 ? body : body.slice(0, 90) + "...";
     return <div>
-      <button onClick={this.props.handleDelete}></button>
+      <button onClick={this.props.handleDelete.bind(null, this.props.note.id)}></button>
       <h4>{this.props.note.title}</h4>
       <h5>{prettyDate(this.props.note.updated_at)}</h5>
       <p>{body}</p>

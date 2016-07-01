@@ -14,9 +14,9 @@ const NotesIndex = React.createClass({
       selectedNote: undefined
     };
   },
-  handleDelete(event) {
+  handleDelete(id, event) {
     event.stopPropagation();
-    NoteActions.destroyNote(this.state.selectedNote.id);
+    NoteActions.destroyNote(id);
     this.setState({ selectedNote: undefined, noteForm: undefined });
   },
   componentDidMount() {
