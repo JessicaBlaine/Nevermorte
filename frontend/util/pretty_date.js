@@ -3,7 +3,7 @@
 module.exports = function(dateString) {
   const oldDate = new Date(dateString);
   const diff = Math.floor((new Date() - oldDate) / 1000);
-  const dayDiff = Math.floor(diff / 86400000);
+  const dayDiff = Math.floor(diff / 86400);
 
 	if ( isNaN(dayDiff) || dayDiff < 0) {
     return;
