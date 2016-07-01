@@ -29,7 +29,9 @@ NoteStore.__onDispatch = function(payload) {
   }
 };
 
-
+NoteStore.find = function(id) {
+  return _notes[id];
+};
 
 NoteStore.all = function() {
   return Object.assign([], _notes);

@@ -10,14 +10,24 @@ const NotesIndex = React.createClass({
   getInitialState: function() {
     return {
       notes: NoteStore.all(),
-      noteForm: ""
+      noteForm: undefined,
+      selectedNote: undefined
     };
   },
+  handleDelete(event) {
+    event.stopPropagation();
+    NoteActions.destroyNote(this.state.selectedNote.id);
+    this.setState({ selectedNote: undefined, noteForm: undefined });
+  },
   componentDidMount() {
-    NoteStore.addListener(this._onChange);
+    this.storeListener = NoteStore.addListener(this._onChange);
     NoteActions.fetchNotes();
   },
+  componentWillUnmount() {
+    NoteStore.removeListener(this.storeListener);
+  },
   _onChange() {
+    console.log("changing");
     this.setState({ notes: NoteStore.all() });
   },
   openForm(note) {
@@ -36,24 +46,25 @@ const NotesIndex = React.createClass({
   },
   render() {
     return <div className="notes-index-container">
-
-      <ul className="notes-index">
+      <div>
         <header>
           <h1>NOTES</h1>
           <span>{this.state.notes.length + " notes"}</span>
         </header>
-        {
-          this.state.notes.map(note => {
-            let selected = this.state.selectedNote === note ? "selected" : "";
-            return <li key={note.id}
-              className={selected}
-              onClick={this.openForm.bind(null, note)}>
-                <NotesIndexItem note={note}/>
-            </li>;
-          })
-        }
-        <li onClick={this.newNote}>Start a new Note</li>
-      </ul>
+        <ul className="notes-index">
+          {
+            this.state.notes.map(note => {
+              let selected = this.state.selectedNote === note ? "selected" : "";
+              return <li key={note.id}
+                className={selected}
+                onClick={this.openForm.bind(null, note)}>
+                  <NotesIndexItem handleDelete={this.handleDelete} note={note}/>
+              </li>;
+            })
+          }
+          <li onClick={this.newNote}>Start a new Note</li>
+        </ul>
+      </div>
       {this.state.noteForm}
     </div>;
   }

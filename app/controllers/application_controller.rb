@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_logout
-    redirect_to root_url if current_user
+    redirect_to "/#/home" if current_user
   end
 end

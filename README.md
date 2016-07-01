@@ -85,8 +85,8 @@ user interface.
 **Objective:** Existing pages (including signup/signin) will look good.
 
 - [x] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [x] position elements on the page
+- [x] add basic colors & styles
 
 ### Phase 5: Notebooks (1 day, W2 Tu 12pm)
 

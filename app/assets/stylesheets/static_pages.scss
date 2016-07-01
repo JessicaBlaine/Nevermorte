@@ -20,24 +20,41 @@ html {
 .notes-index-container {
     height: 100%;
     display: flex;
+    div header {
+        min-height: 55px;
+        border-bottom: 1px solid $highlight-color;
+        border-left: 1px solid $highlight-color;
+        border-right: 1px solid $highlight-color;
+        color: dimgrey;
+        margin-left: 75px;
+        height: 10%;
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            padding: 0 10px;
+        }
+        span {
+            font-size: 16px;
+            padding: 0 10px;
+        }
+    }
 }
 
 .notes-index {
-    height: 100%;
+    height: 90%;
     border-radius: 2px;
-    background: white;
+    background: whitesmoke;
     flex: none;
     width: 350px;
     margin-left: 75px;
     border-bottom: 1px solid $highlight-color;
     border-left: 1px solid $highlight-color;
     border-right: 1px solid $highlight-color;
-    header {
-        padding: 0 20px;
-    }   
+    overflow: scroll;
     li {
         padding: 0 20px;
         background: transparent;
+        position: relative;
         transition: background-color 0.3 ease-in-out 0s;
           transition-property: background-color;
           transition-duration: 0.3s;
@@ -60,6 +77,21 @@ html {
             color: grey;
             font-size: 14px;
         }
+        button {
+          display: none;
+          position: absolute;
+          background: url(http://i.imgur.com/QMo63HG.png);
+          background-size: cover;
+          outline: 0;
+          right: 10px;
+          width: 26px;
+          height: 26px;
+        }
+        button:hover {
+            width: 29px;
+            cursor: pointer;
+            background: url(http://i.imgur.com/6saDnJY.png);
+        }
     }
     li:hover {
         color: white;
@@ -72,6 +104,9 @@ html {
         p {
             color: white;
         }
+        button {
+            display: block;
+        }
     }
     .selected {
         border: 3px solid $base-color;
@@ -81,6 +116,7 @@ html {
 
 .note-form {
      flex: 1;
+     padding-left: 20px;
      textarea {
          width: 100%;
          height: 90%;

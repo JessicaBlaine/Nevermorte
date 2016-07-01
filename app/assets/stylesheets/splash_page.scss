@@ -61,14 +61,14 @@ div.splash {
     h1 {
       font-size: 46px;
       color: whitesmoke;
-      text-shadow: 0px 0px 10px $base-color;
+      text-shadow: 0px 0px 7px $dark-color;
     }
     p {
       font-weight: 400;
       font-size: 26px;
       font-weight: 300;
       color: white;
-      text-shadow: 0px 0px 10px $base-color;
+      text-shadow: 0px 0px 7px $dark-color;
     }
     a {
       float: right;
@@ -115,7 +115,7 @@ div.splash {
       max-width: 400px;
       margin-left: 20px;
       margin-bottom: 35px;
-      color: $light-color;
+      color: $dark-color;
       h2 {
         font-size: 38px;
       }
