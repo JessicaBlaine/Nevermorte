@@ -4,7 +4,8 @@
 
 ### Root
 
-- `GET /` - loads React web app
+- `GET /` - loads splash page
+- `GET /#/home` - loads React web app
 
 ### Users
 

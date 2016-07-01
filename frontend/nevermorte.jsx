@@ -16,6 +16,9 @@ const NoteApiUtil = window.NoteApi = require("./util/notes_api_util");
 const NoteActions = window.NoteActions = require('./actions/note_actions');
 const NoteStore = window.NoteStore = require('./stores/note_store');
 const prettyDate = window.prettyDate = require('./util/pretty_date');
+window.NotebookApi = require("./util/notebook_api_util");
+window.NotebookActions = require('./actions/notebook_actions');
+window.NotebookStore = require('./stores/notebook_store');
 
 const appRouter = (
   <Router history={ hashHistory }>

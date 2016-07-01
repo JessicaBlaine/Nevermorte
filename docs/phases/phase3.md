@@ -2,16 +2,16 @@
 
 ## Rails
 ### Models
-* [ ] Notebook
+* [x] Notebook
 * [ ] Tag
 * [ ] Tagging
 
 ### Controllers
-* [ ] Api::NotebooksController (create, destroy, index, show, update)
+* [x] Api::NotebooksController (create, destroy, index, show, update)
 
 ### Views
-* [ ] notebooks/index.json.jbuilder
-* [ ] notebooks/show.json.jbuilder
+* [x] notebooks/index.json.jbuilder
+* [x] notebooks/show.json.jbuilder
 * [ ] tags/show.json.jbuilder
 
 ## Flux
@@ -25,20 +25,20 @@
 * [ ] Notebook
 
 ### Actions
-* [ ] ApiActions.receiveAllNotebooks -> triggered by ApiUtil
-* [ ] ApiActions.receiveSingleNotebook
-* [ ] ApiActions.deleteNotebook
-* [ ] NotebookActions.fetchAllNotebooks -> triggers ApiUtil
-* [ ] NotebookActions.fetchSingleNotebook
-* [ ] NotebookActions.createNotebook
-* [ ] NotebookActions.editNotebook
-* [ ] NotebookActions.destroyNotebook
+* [x] ApiActions.receiveAllNotebooks -> triggered by ApiUtil
+* [x] ApiActions.receiveSingleNotebook
+* [x] ApiActions.deleteNotebook
+* [x] NotebookActions.fetchAllNotebooks -> triggers ApiUtil
+* [x] NotebookActions.fetchSingleNotebook
+* [x] NotebookActions.createNotebook
+* [x] NotebookActions.editNotebook
+* [x] NotebookActions.destroyNotebook
 
 ### ApiUtil
-* [ ] ApiUtil.fetchAllNotebooks
-* [ ] ApiUtil.fetchSingleNotebook
-* [ ] ApiUtil.createNotebook
-* [ ] ApiUtil.editNotebook
-* [ ] ApiUtil.destroyNotebook
+* [x] ApiUtil.fetchAllNotebooks
+* [x] ApiUtil.fetchSingleNotebook
+* [x] ApiUtil.createNotebook
+* [x] ApiUtil.editNotebook
+* [x] ApiUtil.destroyNotebook
 
 ## Gems/Libraries
