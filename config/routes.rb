@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resources :notes, except: [:new, :edit]
+    resources :notebooks, except: [:new, :edit]
   end
 end

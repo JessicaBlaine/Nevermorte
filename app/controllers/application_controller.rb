@@ -21,4 +21,12 @@ class ApplicationController < ActionController::Base
   def require_logout
     redirect_to "/#/home" if current_user
   end
+
+
+  def require_login
+    unless current_user
+      flash[:error] = "You must be logged in to access this section"
+      render json: { errors: ["This resource requires login"]}, status: 302
+    end
+  end
 end
