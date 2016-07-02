@@ -56,3 +56,24 @@ h1:hover, h2:hover, p:hover {
 input {
   outline: none;
 }
+
+.hidden {
+    position: fixed;
+    left: -450px;
+    z-index: 3;
+    background: rgba(256, 256, 256, 0.0);
+    transition: background 0.3s ease-in-out 0s, 
+      left 0.3s ease-in-out 0s;
+        transition-property: left, background;
+        transition-duration: 0.3s, 0.3s;
+        transition-timing-function: ease-in-out, ease-in-out;
+        transition-delay: .1s, 0s;
+}
+
+
+.logout:hover {
+  cursor: pointer;
+}
+button {
+  outline: 0;
+}

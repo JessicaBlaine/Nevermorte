@@ -10,6 +10,7 @@ header.splash {
     float: left;
   }
   .row {
+    min-width: 675px;
     max-width: 900px;
     margin: 0 auto;
   }
@@ -25,7 +26,7 @@ header.splash {
   }
   .link {
     float: right;
-    margin: 50px 10px 10px 0;
+    margin: 60px 10px 0px 0;
     color: $highlight-color;
     border-bottom: 1px solid transparent;
     @include hover-transition;

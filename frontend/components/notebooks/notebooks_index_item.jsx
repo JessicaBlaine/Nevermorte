@@ -5,6 +5,7 @@ const NoteStore = require('../../stores/note_store');
 const NotebookActions = require('../../actions/notebook_actions');
 const NoteActions = require('../../actions/note_actions');
 const NotesIndexItem = require('../notes/notes_index_item');
+const NoteForm = require('../notes/note_form');
 
 const NotebookIndexItem = React.createClass({
   getInitialState: function() {

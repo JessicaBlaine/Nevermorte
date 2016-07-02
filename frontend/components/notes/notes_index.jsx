@@ -6,13 +6,16 @@ const NoteActions = require('../../actions/note_actions');
 // components
 const NotesIndexItem = require('./notes_index_item');
 const NoteForm = require('./note_form');
+const NotebooksIndex = require('../notebooks/notebooks_index');
 
 const NotesIndex = React.createClass({
   getInitialState: function() {
     return {
       notes: NoteStore.all(),
+      index: "hidden",
       noteForm: undefined,
-      selectedNote: undefined
+      selectedNote: undefined,
+      buttonClass: "notebook"
     };
   },
   handleDelete(id, event) {
@@ -38,6 +41,13 @@ const NotesIndex = React.createClass({
       selectedNote: note
     });
   },
+  toggleNotebooks() {
+    let isHidden = this.state.index === "hidden";
+    this.setState({
+      index: isHidden ? "revealed" : "hidden",
+      buttonClass: isHidden ? "notebook selected" : "notebook"
+    });
+  },
   newNote() {
     NoteActions.createNote({
       title: "Name your note",
@@ -47,6 +57,12 @@ const NotesIndex = React.createClass({
   },
   render() {
     return <div className="notes-index-container">
+      <NotebooksIndex hidden={this.state.index}/>
+      <div className="sidebar">
+        <div className={this.state.buttonClass} onClick={this.toggleNotebooks}>
+          <button className={"notebook"} />
+        </div>
+      </div>
       <div>
         <header>
           <h1>NOTES</h1>
@@ -59,7 +75,8 @@ const NotesIndex = React.createClass({
               return <li key={note.id}
                 className={selected}
                 onClick={this.openForm.bind(null, note)}>
-                  <NotesIndexItem handleDelete={this.handleDelete} note={note}/>
+                  <NotesIndexItem handleDelete={this.handleDelete}
+                                  note={note}/>
               </li>;
             })
           }
