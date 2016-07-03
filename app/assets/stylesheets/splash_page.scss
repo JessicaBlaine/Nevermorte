@@ -43,9 +43,7 @@ div.splash {
   position: relative;
   .splash-image {
     margin: 0 auto;
-    background: url(http://i.imgur.com/Q6KGJjQ.jpg);
-    // background: url(http://i.imgur.com/eubg3zl.jpg);
-    // background: url("http://i.imgur.com/eeXpXpX.jpg");
+    background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507235/photo-1443188631128-a1b6b1c5c207_rdhfqa.jpg);
     display: block;
     background-size: 100% auto;
     width: 100%;
@@ -58,7 +56,7 @@ div.splash {
     width: 510px;
     left: 40px;
     bottom: 60px;
-    
+
     h1 {
       font-size: 46px;
       color: whitesmoke;
@@ -91,8 +89,8 @@ div.splash {
 }
 
 .story {
-  
-  
+
+
   background: whitesmoke;
   .story-item {
     margin: 25px auto;
@@ -105,7 +103,7 @@ div.splash {
     .note {
       margin-left: 25px;
       margin-right: 25px;
-      background: url('http://i.imgur.com/tPHa1ML.jpg');
+      background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467509238/photo-1435527173128-983b87201f4d_jlx2ki.jpg);
       background-size: cover;
       border-radius: 5px;
       height: 220px;

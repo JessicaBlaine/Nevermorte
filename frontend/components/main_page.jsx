@@ -16,13 +16,22 @@ const MainPage = React.createClass({
       notebookButton: isHidden ? "notebook selected" : "notebook"
     });
   },
+  newNote() {
+
+  },
   render() {
-    return <div>
-      <NotebooksIndex hidden={this.state.notebooks}/>
+    return <div className="main-page">
+      <NotebooksIndex hidden={this.state.notebooks}
+                      unhide={this.toggleNotebooks}/>
       <div className="sidebar">
+
         <div className={this.state.notebookButton}
              onClick={this.toggleNotebooks}>
-          <button className={"notebook"} />
+          <button className="notebook" />
+        </div>
+
+        <div className="new-note" onClick={this.newNote}>
+          <button className="new-note" />
         </div>
       </div>
       {this.props.children}

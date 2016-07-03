@@ -1,6 +1,7 @@
 const React = require('react');
 const NotebookStore = require('../../stores/notebook_store');
 const NotebookActions = require('../../actions/notebook_actions');
+const hashHistory = require('react-router').hashHistory;
 
 const NotebooksIndex = React.createClass({
   getInitialState: function() {
@@ -15,8 +16,12 @@ const NotebooksIndex = React.createClass({
   _onChange() {
     this.setState({ notebooks: NotebookStore.all() });
   },
+  showNotebook(notebook, event) {
+    hashHistory.push(`/notebooks/${notebook.id}`);
+  },
   render() {
-    return <div className={"notebooks-index " + this.props.hidden}>
+    return <div onClick={this.props.unhide}
+                className={"notebooks-index " + this.props.hidden}>
       <div>
         <h1>NOTEBOOKS</h1>
         <button className="create" onClick={this.newNotebook}/>
@@ -25,7 +30,8 @@ const NotebooksIndex = React.createClass({
             this.state.notebooks.map(notebook => {
               let noteCount = notebook.noteCount;
               noteCount += noteCount === 1 ? " note" : " notes";
-              return <li key={notebook.id}>
+              return <li onClick={this.showNotebook.bind(null, notebook)}
+                         key={notebook.id}>
                 <button></button>
                 <h2>{notebook.title}</h2>
                 <span>{noteCount}</span>

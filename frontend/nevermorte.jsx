@@ -31,10 +31,10 @@ const appRouter = (
         <IndexRoute component={ NotesIndex }/>
       </Route>
       <Route component={ MainPage } >
-        <Route path="notes" component={ NotesIndex }/>
-        <Route path="notebooks" component={ NotebooksIndex }/>
+        <Route path="notes" component={ NotesIndex }/>\
         <Route path="notebooks/:notebookId" component={ NotebooksIndexItem }/>
       </Route>
+      <Route path="*" component={ SplashPage }/>
     </Route>
   </Router>
 );

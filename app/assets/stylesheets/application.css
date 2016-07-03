@@ -38,7 +38,7 @@ body, figure, textarea header, h1, h2, h4, h5, p, li, ul, footer, form, input, i
 }
 
 .logo-image {
-  background-image:  url('https://s-media-cache-ak0.pinimg.com/236x/ab/0d/32/ab0d32a00761b5561244a185ce5453ac.jpg');
+  background-image:  url(https://res.cloudinary.com/nevermorte/image/upload/v1467507361/Raven_c2pemr.jpg);
   background-size: cover;
   display: inline-block;
   width: 100px;
@@ -62,7 +62,7 @@ input {
     left: -450px;
     z-index: 3;
     background: rgba(256, 256, 256, 0.0);
-    transition: background 0.3s ease-in-out 0s, 
+    transition: background 0.3s ease-in-out 0s,
       left 0.3s ease-in-out 0s;
         transition-property: left, background;
         transition-duration: 0.3s, 0.3s;

@@ -40,16 +40,8 @@ const NotesIndex = React.createClass({
       selectedNote: note
     });
   },
-  newNote() {
-    NoteActions.createNote({
-      title: "Name your note",
-      body: "and start typing",
-      notebook_id: 0
-    });
-  },
   render() {
     return <div className="notes-index-container">
-
       <div>
         <header>
           <h1>NOTES</h1>
@@ -67,7 +59,6 @@ const NotesIndex = React.createClass({
               </li>;
             })
           }
-          <li onClick={this.newNote}>Start a new Note</li>
         </ul>
       </div>
       {this.state.noteForm}
