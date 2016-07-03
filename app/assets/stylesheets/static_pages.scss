@@ -149,7 +149,7 @@ div.notebook {
     }
 }
 div.notebook:hover {
-    z-index: 5;
+    
     background-color: $light-color;
     border: 2px solid $light-color;
     cursor: pointer;
@@ -176,7 +176,7 @@ div.notebooks-index.revealed {
         transition-property: left, background;
         transition-duration: 0.3s, 0.3s;
         transition-timing-function: ease-in-out, ease-in-out;
-        transition-delay: 0s, 0.25s;
+        transition-delay: 0s, 0.1s;
     position: fixed;
     background: rgba(256, 256, 256, 0.7);
     top: 0;
@@ -190,7 +190,7 @@ div.notebooks-index {
     height: 100%;
     div {
         background: whitesmoke;
-        border-right: 1px solid $highlight-color;
+        border-right: 3px solid $highlight-color;
         z-index: 3;
         width: 420px;
         height: 100%;
@@ -252,10 +252,13 @@ div.notebooks-index {
 .sidebar {
     background: white;
     border-right: 1px solid $highlight-color;
-    z-index: 6;
+    z-index: 5;
     position: fixed;
     width: 75px;
     height: 100%;
+    div.new-note {
+        
+    }
 }
 
 .logout {

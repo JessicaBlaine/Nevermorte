@@ -13,6 +13,7 @@ const SplashPage = require('./components/splash_page');
 const NotesIndex = require('./components/notes/notes_index');
 const NotebooksIndexItem = require('./components/notebooks/notebooks_index_item');
 const NotebooksIndex = require('./components/notebooks/notebooks_index');
+const MainPage = require('./components/main_page');
 // debugging
 const NoteApiUtil = window.NoteApi = require("./util/notes_api_util");
 const NoteActions = window.NoteActions = require('./actions/note_actions');
@@ -26,9 +27,14 @@ const appRouter = (
   <Router history={ hashHistory }>
     <Route path="/" component={ App }>
       <IndexRoute component={ SplashPage }/>
-      <Route path="home" component={ NotesIndex }/>
-      <Route path="notebooks" component={ NotebooksIndex }/>
-      <Route path="notebooks/:notebookId" component={ NotebooksIndexItem }/>
+      <Route path="home" component={ MainPage }>
+        <IndexRoute component={ NotesIndex }/>
+      </Route>
+      <Route component={ MainPage } >
+        <Route path="notes" component={ NotesIndex }/>
+        <Route path="notebooks" component={ NotebooksIndex }/>
+        <Route path="notebooks/:notebookId" component={ NotebooksIndexItem }/>
+      </Route>
     </Route>
   </Router>
 );
