@@ -16,11 +16,11 @@ module.exports = {
       error: onError
     });
   },
-  createNotebook(notebooks, onSuccess, onError) {
+  createNotebook(notebook, onSuccess, onError) {
     $.ajax({
       url: `api/notebooks`,
       method: 'POST',
-      data: { notebooks },
+      data: { notebook: notebook },
       success: onSuccess,
       error: onError
     });

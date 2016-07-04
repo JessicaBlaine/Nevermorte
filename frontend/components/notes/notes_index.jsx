@@ -9,8 +9,9 @@ const NoteForm = require('./note_form');
 
 const NotesIndex = React.createClass({
   getInitialState: function() {
+    const notes = NoteStore.all();
     return {
-      notes: NoteStore.all(),
+      notes: notes,
       index: "hidden",
       noteForm: undefined,
       selectedNote: undefined,
@@ -20,7 +21,6 @@ const NotesIndex = React.createClass({
   handleDelete(id, event) {
     event.stopPropagation();
     NoteActions.destroyNote(id);
-    this.setState({ selectedNote: undefined, noteForm: undefined });
   },
   componentDidMount() {
     this.storeListener = NoteStore.addListener(this._onChange);
@@ -30,8 +30,19 @@ const NotesIndex = React.createClass({
     this.storeListener.remove();
   },
   _onChange() {
+    // debugger;
     console.log("changing");
-    this.setState({ notes: NoteStore.all() });
+    const notes = NoteStore.all();
+    let selectedNote = notes[0];
+    if (this.state.selectedNote) {
+      const foundNote = NoteStore.find(this.state.selectedNote.id);
+      if (foundNote) selectedNote = foundNote;
+    }
+    this.setState({
+                  notes: notes,
+                  selectedNote: selectedNote,
+                  noteForm: <NoteForm note={selectedNote}/>
+               });
   },
   openForm(note) {
     console.log("opening Form");

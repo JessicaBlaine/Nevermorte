@@ -34,7 +34,9 @@ NotebookStore.find = function(id) {
 };
 
 NotebookStore.all = function() {
-  return Object.keys(_notebooks).map(key => _notebooks[key] );
+  return Object.keys(_notebooks).map(key => _notebooks[key]);
 };
+
+NotebookStore.defaultNotebook = 1;
 
 module.exports = NotebookStore;

@@ -14,6 +14,7 @@ const NotesIndex = require('./components/notes/notes_index');
 const NotebooksIndexItem = require('./components/notebooks/notebooks_index_item');
 const NotebooksIndex = require('./components/notebooks/notebooks_index');
 const MainPage = require('./components/main_page');
+const NoteForm = require('./components/notes/note_form');
 // debugging
 const NoteApiUtil = window.NoteApi = require("./util/notes_api_util");
 const NoteActions = window.NoteActions = require('./actions/note_actions');
@@ -34,6 +35,7 @@ const appRouter = (
         <Route path="notes" component={ NotesIndex }/>\
         <Route path="notebooks/:notebookId" component={ NotebooksIndexItem }/>
       </Route>
+      <Route path="notes/:noteId" component={ NoteForm }/>
       <Route path="*" component={ SplashPage }/>
     </Route>
   </Router>

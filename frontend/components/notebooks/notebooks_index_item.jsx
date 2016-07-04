@@ -15,6 +15,9 @@ const NotebookIndexItem = React.createClass({
       selectedNote: undefined
     };
   },
+  componentWillReceiveProps(newProps) {
+    NotebookActions.getNotebook(newProps.params.notebookId);
+  },
   handleDelete(id, event) {
     event.stopPropagation();
     NoteActions.destroyNote(id);
@@ -29,7 +32,14 @@ const NotebookIndexItem = React.createClass({
   },
   _onChange() {
     console.log("changing");
-    this.setState({ notes: NoteStore.all() });
+    const notes = NoteStore.all();
+    const note = this.state.selectedNote;
+    const selectedNote = notes.includes(note) ? note : notes[0];
+    this.setState({
+                  notes: notes,
+                  selectedNote: selectedNote,
+                  noteForm: <NoteForm note={selectedNote}/>
+              });
   },
   openForm(note) {
     console.log("opening Form");
@@ -37,14 +47,6 @@ const NotebookIndexItem = React.createClass({
       noteForm: <NoteForm note={note}/>,
       selectedNote: note
     });
-  },
-  newNote() {
-    NoteActions.createNote({
-      title: "Name your note",
-      body: "and start typing",
-      notebook_id: 0
-    });
-    NotebookActions.getNotebook(this.props.params.notebookId);
   },
   render() {
     let noteBook = NotebookStore.find(this.props.params.notebookId);
@@ -66,7 +68,6 @@ const NotebookIndexItem = React.createClass({
               </li>;
             })
           }
-          <li onClick={this.newNote}>Start a new Note</li>
         </ul>
       </div>
       {this.state.noteForm}
