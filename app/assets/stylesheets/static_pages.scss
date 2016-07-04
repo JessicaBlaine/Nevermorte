@@ -190,15 +190,29 @@ div.notebooks-index {
             border-bottom: 2px solid $highlight-color;
         }
         ul {
-            margin: 0 25px;
+            padding: 0 25px;
 
             li {
-                height: 75px;
+                padding: 10px 10px 0 10px;
                 border-bottom: 1px solid $highlight-color;
 
             }
+            li:hover {
+                cursor: pointer;
+                background: white;
+                button {
+                    display: block;
+                    cursor: pointer;
+                    
+                }
+                button:hover {
+                    background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507244/garbage-open_z9uek3.png);
+                    background-size: cover;
+                }
+                  
+            }
             h2 {
-                margin-top: 10px;
+                
                 font-size: 22px;
             }
             span {
@@ -208,11 +222,13 @@ div.notebooks-index {
 
             }
             button {
+                display: none;
                 height: 32px;
                 width: 32px;
                 position: absolute;
                 left: 350px;
-                background: green;
+                background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507240/garbage_uvgop2.png);
+                background-size: cover;
             }
         }
     }
@@ -338,6 +354,16 @@ div.notebooks-index {
     div.notebook.selected:hover {
         background-color: $light-color;
     }  
+}
+
+form.notebook-form {
+    left: 0;
+    top: 0;
+    z-index: 10;
+    position: absolute;
+    width: 200px;
+    height: 100%;
+    background: wheat;
 }
 
 .logout {
