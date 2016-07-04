@@ -1,0 +1,127 @@
+
+@import 'colors';
+@import 'hover_transition';
+
+.sidebar {
+    background: white;
+    border-right: 1px solid $highlight-color;
+    z-index: 5;
+    position: fixed;
+    width: 75px;
+    height: 100%;
+    .logo-image {
+        width: 74px;
+        height: 74px;
+    }
+    div.new-note {
+        width: 52px;
+        height: 52px;
+        background: whitesmoke;
+        position: absolute;
+        left: 14px;
+        top: 90px;
+        border-radius: 20px;
+        border: 1px solid $highlight-color;
+        @include hover-transition;
+        button {
+            width: 34px;
+            height: 34px;
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467513763/add_kacrjo.png);
+            background-size: cover;
+            margin: 8px auto;
+        }
+    }
+    div.new-note:hover {
+        background: $light-color;
+        border: 1px solid $light-color;
+        cursor: pointer;
+        button {
+            cursor: pointer;
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467513766/add_1_ametm8.png );
+            background-size: cover;
+            margin: 8px auto;
+        }
+    }
+    div.notes {
+        width: 52px;
+        height: 52px;
+        position: absolute;
+        left: 14px;
+        top: 300px;
+        border-radius: 20px;
+        @include hover-transition;
+        button {
+            outline: 0;
+            margin: 6px auto;
+            width: 34px;
+            height: 34px;
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467589447/note_1_a6ltc6.png);
+            background-size: cover;
+        }
+    }
+    div.notes:hover {
+        background-color: $light-color;
+        border: 2px solid $light-color;
+        cursor: pointer;
+        button {
+            cursor: pointer;
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467590077/note_mqlkod.png );
+            background-size: cover;
+        }
+    }
+    div.notes.selected {
+        border: 2px solid $light-color;
+        background: whitesmoke;
+        button {
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467589447/note_1_a6ltc6.png);
+            background-size: cover;
+        }
+    }
+    div.notes.selected:hover {
+        background-color: $light-color;
+        button {
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467590077/note_mqlkod.png );
+            background-size: cover;
+        }
+    }
+    div.notebook {
+        position: absolute;
+        width: 52px;
+        height: 52px;
+        border-radius: 20px;
+        left: 14px;
+        top: 380px;
+        text-align: center;
+        @include hover-transition;
+        button {
+            outline: 0;
+            margin: 8px auto;
+            width: 36px;
+            height: 36px;
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507238/notebook_1_yvdsjj.png);
+            background-size: cover;
+        }
+    }
+
+    div.notebook:hover {
+        background-color: $light-color;
+        border: 2px solid $light-color;
+        cursor: pointer;
+        button {
+            cursor: pointer;
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507236/notebook_mqaxoa.png);
+            background-size: cover;
+        }
+    }
+    div.notebook.selected {
+        border: 2px solid $light-color;
+        background: whitesmoke;
+        button {
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507236/notebook_mqaxoa.png);
+            background-size: cover;
+        }
+    }
+    div.notebook.selected:hover {
+        background-color: $light-color;
+    }
+}
