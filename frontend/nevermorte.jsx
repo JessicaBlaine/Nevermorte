@@ -15,10 +15,12 @@ const NotebooksIndexItem = require('./components/notebooks/notebooks_index_item'
 const NotebooksIndex = require('./components/notebooks/notebooks_index');
 const MainPage = require('./components/main_page');
 const NoteForm = require('./components/notes/note_form');
+const NotebookForm = require('./components/notebooks/notebook_form');
 // debugging
 const NoteApiUtil = window.NoteApi = require("./util/notes_api_util");
 const NoteActions = window.NoteActions = require('./actions/note_actions');
 const NoteStore = window.NoteStore = require('./stores/note_store');
+
 const prettyDate = window.prettyDate = require('./util/pretty_date');
 window.NotebookApi = require("./util/notebook_api_util");
 window.NotebookActions = require('./actions/notebook_actions');
@@ -33,6 +35,7 @@ const appRouter = (
       </Route>
       <Route component={ MainPage } >
         <Route path="notes" component={ NotesIndex }/>\
+        <Route path="notebooks/new" component={ NotebookForm }/>
         <Route path="notebooks/:notebookId" component={ NotebooksIndexItem }/>
       </Route>
       <Route path="notes/:noteId" component={ NoteForm }/>

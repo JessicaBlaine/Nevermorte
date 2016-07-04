@@ -16,13 +16,13 @@
 
 ## Flux
 ### Views (React Components)
-* [ ] NotebooksIndex
-  - [ ] NotebookIndexItem
-* [ ] NotebookForm
+* [x] NotebooksIndex
+  - [x] NotebookIndexItem
+* [x] NotebookForm
 * [ ] SearchIndex
 
 ### Stores
-* [ ] Notebook
+* [x] Notebook
 
 ### Actions
 * [x] ApiActions.receiveAllNotebooks -> triggered by ApiUtil

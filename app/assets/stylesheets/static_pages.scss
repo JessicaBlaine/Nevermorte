@@ -203,16 +203,16 @@ div.notebooks-index {
                 button {
                     display: block;
                     cursor: pointer;
-                    
+
                 }
                 button:hover {
                     background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507244/garbage-open_z9uek3.png);
                     background-size: cover;
                 }
-                  
+
             }
             h2 {
-                
+
                 font-size: 22px;
             }
             span {
@@ -266,7 +266,9 @@ div.notebooks-index {
     div.new-note:hover {
         background: $light-color;
         border: 1px solid $light-color;
+        cursor: pointer;
         button {
+            cursor: pointer;
             background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467513766/add_1_ametm8.png );
             background-size: cover;
             margin: 8px auto;
@@ -287,7 +289,7 @@ div.notebooks-index {
             height: 34px;
             background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467589447/note_1_a6ltc6.png);
             background-size: cover;
-        }   
+        }
     }
     div.notes:hover {
         background-color: $light-color;
@@ -332,7 +334,7 @@ div.notebooks-index {
             background-size: cover;
         }
     }
-     
+
     div.notebook:hover {
         background-color: $light-color;
         border: 2px solid $light-color;
@@ -353,17 +355,94 @@ div.notebooks-index {
     }
     div.notebook.selected:hover {
         background-color: $light-color;
-    }  
+    }
 }
 
 form.notebook-form {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out 0s;
+        transition-property: opacity;
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 0s;
     left: 0;
     top: 0;
     z-index: 10;
     position: absolute;
-    width: 200px;
+    width: 100%;
     height: 100%;
-    background: wheat;
+    background: rgba(256, 256, 256, 0.95);
+    div.modal-content {
+        width: 600px;
+        margin: 200px auto;
+        text-align: center;
+        .notebook {
+            margin: 0 auto;
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467509734/newNotebook2_yfsarr.png);
+            background-size: cover;
+            width: 52px;
+            height: 52px;
+            border-bottom: 1px solid lightgrey;
+        }
+        h1 {
+            display: inline-block;
+            padding: 15px 0;
+            font-size: 20px;
+            font-style: italic;
+            font-weight: 300;
+            color: $light-color;
+            border-bottom: 1px solid $highlight-color;
+        }
+        input {
+            text-align: center;
+            margin: 55px auto;
+            height: 44px;
+            width: 100%;
+            font-weight: 300;
+            font-size: 36px;
+        }
+        div {
+            text-align: center;
+        }
+        button {
+            display: inline-block;
+            width: 180px;
+            padding: 8px;
+            margin: 15px 5px;
+            border-radius: 5px;
+            color: $base-color;
+            font-weight: 400;
+            font-size: 16px;
+            background: #ececec;
+            border: 1px solid $highlight-color;
+            @include hover-transition;
+        }
+        button.create {
+            background: $light-color;
+            color: white;
+        }
+        button:hover {
+            cursor: pointer;
+            color: $light-color;
+            background: lightgray;
+        }
+        button.create:hover {
+            color: white;
+            background: $base-color;
+        }
+        button:disabled {
+            opacity: 0.6;
+            cursor: default;
+            
+        }
+        button:disabled:hover {
+            background: $light-color;
+        }
+    }
+}
+form.notebook-form.hidden {
+    opacity: 0;
+/*     background: rgba(256, 256, 256, 0); */
 }
 
 .logout {

@@ -36,7 +36,7 @@ const NotebooksIndex = React.createClass({
     NotebookActions.destroyNotebook(notebook.id);
   },
   newNotebook() {
-    this.setState({ newForm: "revealed" });
+    hashHistory.push('/notebooks/new');
   },
   closeNewForm() {
     this.setState({ newForm: "hidden" });
@@ -63,9 +63,6 @@ const NotebooksIndex = React.createClass({
         </ul>
 
       </div>
-
-
-
     </div>;
   }
 });

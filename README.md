@@ -1,7 +1,6 @@
 # Nevermorte
 
-[Heroku link][heroku] **Note:** This should be a link to your production site
-
+[Heroku link][heroku]
 [heroku]: http://nevermorte.herokuapp.com
 
 ## Minimum Viable Product
@@ -92,12 +91,12 @@ user interface.
 
 **Objective:** Notes belong to Notebooks, and can be viewed by notebook.
 
-- [ ] create `Notebook` model
+- [x] create `Notebook` model
 - build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
+  - [x] Notebook CRUD
+  - [x] adding notes requires a notebook
+  - [x] moving notes to a different notebook
+  - [x] viewing notes by notebook
 - Use CSS to style new views
 
 Phase 3 adds organization to the Notes. Notes belong to a Notebook,
