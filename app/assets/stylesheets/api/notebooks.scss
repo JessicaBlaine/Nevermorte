@@ -209,7 +209,7 @@ form.notebook-form.hidden {
     left: 0;
     right: 0;
     bottom: 0;
-    background: aliceblue;
+    background: whitesmoke;
     text-align: center;
     cursor: default;
     div.content {
@@ -251,11 +251,21 @@ form.notebook-form.hidden {
             border: 1px solid $highlight-color;
         }
     }
+    .creator {
+        text-align: left;
+        margin-left: 45px;
+        span {
+            font-size: 16px;
+            margin: 0 5px 20px 5px;
+            padding: 0;
+            display: inline-block;
+        }
+    }
     .delete {
         text-align: left;
         color: $light-color;
         margin: 10px 50px;
-        
+        font-size: 16px;
         a {
             @include hover-transition;
         }
