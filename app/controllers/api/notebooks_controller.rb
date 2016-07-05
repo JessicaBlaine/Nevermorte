@@ -1,6 +1,7 @@
 class Api::NotebooksController < ApplicationController
   def show
     @notebook = Notebook.find(params[:id])
+    @creator = @notebook.author.username
     render :show
   end
 

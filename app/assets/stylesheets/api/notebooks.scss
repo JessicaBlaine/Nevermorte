@@ -185,3 +185,122 @@ form.notebook-form.hidden {
     opacity: 0;
 /*     background: rgba(256, 256, 256, 0); */
 }
+.edit {
+    width: 26px;
+    height: 26px;
+    background: transparent;
+    position: absolute;
+    left: 390px;
+    border-radius: 8px;
+    @include hover-transition;
+    overflow: visible;
+    .icon {
+        background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467667509/settings_z9y72w.png);
+        background-size: cover;
+        margin: 2px auto;
+        width: 22px;
+        height: 22px;
+    }
+}
+.notebook-edit {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: aliceblue;
+    text-align: center;
+    cursor: default;
+    div.content {
+            width: 600px;
+            margin: auto;
+        }
+    .symbol {
+        width: 42px;
+        height: 42px;
+        background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467667509/settings_z9y72w.png);
+        background-size: cover;
+        margin: 30px auto 0 auto;
+    }
+    h2 {
+        display: inline-block;
+        font-weight: 300;
+        font-style: italic;
+        border-bottom: 1px solid $highlight-color;
+    }
+    div.title {
+        position: relative;
+        display: inline-block;
+        margin-top: 80px;
+        label {
+            position: absolute;
+            font-size: 16px;
+            font-weight: 300;
+            border: 1px solid $highlight-color;
+            border-radius: 5px;
+            padding: 3px;
+            margin: 6px 0 0 46px;
+        }
+        input {
+            margin: 0 40px;
+            width: 500px;
+            height: 40px;
+            padding-left: 60px;
+            border-radius: 5px;
+            border: 1px solid $highlight-color;
+        }
+    }
+    .delete {
+        text-align: left;
+        color: $light-color;
+        margin: 10px 50px;
+        
+        a {
+            @include hover-transition;
+        }
+        a:hover {
+            display: inline-block;
+            cursor: pointer;
+            color: $base-color;
+        }
+    }
+    .button-container {
+        border-top: 1px solid $highlight-color;
+        padding-top: 20px;
+        button {
+            display: inline-block;
+            width: 180px;
+            padding: 8px;
+            margin: 15px 5px;
+            border-radius: 5px;
+            color: $base-color;
+            font-weight: 400;
+            font-size: 16px;
+            background: #ececec;
+            border: 1px solid $highlight-color;
+            @include hover-transition;
+        }
+        button.update {
+            background: $light-color;
+            color: white;
+        }
+        button:hover {
+            cursor: pointer;
+            color: $light-color;
+            background: lightgray;
+        }
+        button.update:hover {
+            color: white;
+            background: $base-color;
+        }
+        button:disabled {
+            opacity: 0.6;
+            cursor: default;
+
+        }
+        button:disabled:hover {
+            background: $light-color;
+        }
+    }
+}

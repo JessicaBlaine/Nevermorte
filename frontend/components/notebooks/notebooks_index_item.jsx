@@ -1,4 +1,5 @@
 const React = require('react');
+const hashHistory = require('react-router').hashHistory;
 
 const NotebookStore = require('../../stores/notebook_store');
 const NoteStore = require('../../stores/note_store');
@@ -6,13 +7,16 @@ const NotebookActions = require('../../actions/notebook_actions');
 const NoteActions = require('../../actions/note_actions');
 const NotesIndexItem = require('../notes/notes_index_item');
 const NoteForm = require('../notes/note_form');
+const NotebookEdit = require('./notebook_edit');
 
 const NotebookIndexItem = React.createClass({
   getInitialState: function() {
     return {
       notes: NoteStore.all(),
       noteForm: undefined,
-      selectedNote: undefined
+      selectedNote: undefined,
+      notebook: NotebookStore.find(this.props.params.notebookId),
+      updated: ""
     };
   },
   componentWillReceiveProps(newProps) {
@@ -32,13 +36,19 @@ const NotebookIndexItem = React.createClass({
   },
   _onChange() {
     console.log("changing");
+    setTimeout(this.setState.bind(this, { updated: "" }), 3000);
     const notes = NoteStore.all();
-    const note = this.state.selectedNote;
-    const selectedNote = notes.includes(note) ? note : notes[0];
+    let selectedNote = notes[0];
+    if (this.state.selectedNote) {
+      const foundNote = NoteStore.find(this.state.selectedNote.id);
+      if (foundNote) selectedNote = foundNote;
+    }
     this.setState({
                   notes: notes,
                   selectedNote: selectedNote,
-                  noteForm: <NoteForm note={selectedNote}/>
+                  noteForm: <NoteForm note={selectedNote}/>,
+                  updated: "✓",
+                  notebook: NotebookStore.find(this.props.params.notebookId)
               });
   },
   openForm(note) {
@@ -48,14 +58,19 @@ const NotebookIndexItem = React.createClass({
       selectedNote: note
     });
   },
+  editNotebook() {
+    hashHistory.push(`/notebooks/${this.props.params.notebookId}/edit`);
+  },
   render() {
-    let noteBook = NotebookStore.find(this.props.params.notebookId);
+    let noteBook = this.state.notebook;
     let title = noteBook ? noteBook.title : "";
     return <div className="notes-index-container">
       <div>
         <header>
-          <h1>{title}</h1>
+          <h1>{title}<span className="updated">{this.state.updated}</span></h1>
+          <NotebookEdit notebook={noteBook}/>
           <span>{this.state.notes.length + " notes"}</span>
+
         </header>
         <ul className="notes-index">
           {

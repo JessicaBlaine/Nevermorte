@@ -49,7 +49,7 @@ const NotebookForm = React.createClass({
         <div className="button-container">
           <button onClick={this.closeForm}>Cancel</button>
           <button disabled={this.state.disabled}
-                  className="create disabled">Create notebook</button>
+                  className="create">Create notebook</button>
         </div>
       </div>
     </form>;
