@@ -33,8 +33,36 @@ NoteStore.find = function(id) {
   return _notes[id];
 };
 
-NoteStore.all = function() {
-  return Object.keys(_notes).map(key => _notes[key] );
+NoteStore.all = function(order) {
+  const notes = Object.keys(_notes).map(key => _notes[key] );
+  switch (order) {
+    case NoteConstants.ASC_UPDATED:
+      return notes.sort(function(a, b) {
+        if (new Date(a.updated_at) > new Date(b.updated_at)) return -1;
+        if (new Date(a.updated_at) < new Date(b.updated_at)) return 1;
+        if (new Date(a.updated_at) - new Date(b.updated_at) === 0) return 0;
+      });
+    case NoteConstants.DESC_UPDATED:
+      return notes.sort(function(a, b) {
+        if (new Date(a.updated_at) < new Date(b.updated_at)) return -1;
+        if (new Date(a.updated_at) > new Date(b.updated_at)) return 1;
+        if (new Date(a.updated_at) - new Date(b.updated_at) === 0) return 0;
+      });
+    case NoteConstants.ASC_CREATED:
+      return notes.sort(function(a, b) {
+        if (new Date(a.updated_at) > new Date(b.updated_at)) return -1;
+        if (new Date(a.updated_at) < new Date(b.updated_at)) return 1;
+        if (new Date(a.updated_at) - new Date(b.updated_at) === 0) return 0;
+      });
+    case NoteConstants.DESC_CREATED:
+      return notes.sort(function(a, b) {
+        if (new Date(a.updated_at) < new Date(b.updated_at)) return -1;
+        if (new Date(a.updated_at) > new Date(b.updated_at)) return 1;
+        if (new Date(a.updated_at) - new Date(b.updated_at) === 0) return 0;
+      });
+    default:
+      return notes;
+  }
 };
 
 module.exports = NoteStore;

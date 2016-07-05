@@ -3,13 +3,14 @@ const Link = require('react-router').Link;
 // flux
 const NoteStore = require('../../stores/note_store');
 const NoteActions = require('../../actions/note_actions');
+const NoteConstants = require('../../constants/note_constants');
 // components
 const NotesIndexItem = require('./notes_index_item');
 const NoteForm = require('./note_form');
 
 const NotesIndex = React.createClass({
   getInitialState: function() {
-    const notes = NoteStore.all();
+    const notes = NoteStore.all(NoteConstants.ASC_UPDATED);
     return {
       notes: notes,
       index: "hidden",
@@ -32,7 +33,7 @@ const NotesIndex = React.createClass({
   _onChange() {
     // debugger;
     console.log("changing");
-    const notes = NoteStore.all();
+    const notes = NoteStore.all(NoteConstants.ASC_UPDATED);
     let selectedNote = notes[0];
     if (this.state.selectedNote) {
       const foundNote = NoteStore.find(this.state.selectedNote.id);

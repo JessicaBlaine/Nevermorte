@@ -1,10 +1,12 @@
 const React = require('react');
 const hashHistory = require('react-router').hashHistory;
-
+// Flux
 const NotebookStore = require('../../stores/notebook_store');
 const NoteStore = require('../../stores/note_store');
 const NotebookActions = require('../../actions/notebook_actions');
 const NoteActions = require('../../actions/note_actions');
+const NoteConstants = require('../../constants/note_constants');
+// components
 const NotesIndexItem = require('../notes/notes_index_item');
 const NoteForm = require('../notes/note_form');
 const NotebookEdit = require('./notebook_edit');
@@ -12,7 +14,7 @@ const NotebookEdit = require('./notebook_edit');
 const NotebookIndexItem = React.createClass({
   getInitialState: function() {
     return {
-      notes: NoteStore.all(),
+      notes: NoteStore.all(NoteConstants.ASC_UPDATED),
       noteForm: undefined,
       selectedNote: undefined,
       notebook: NotebookStore.find(this.props.params.notebookId),
@@ -37,7 +39,7 @@ const NotebookIndexItem = React.createClass({
   _onChange() {
     console.log("changing");
     setTimeout(this.setState.bind(this, { updated: "" }), 3000);
-    const notes = NoteStore.all();
+    const notes = NoteStore.all(NoteConstants.ASC_UPDATED);
     let selectedNote = notes[0];
     if (this.state.selectedNote) {
       const foundNote = NoteStore.find(this.state.selectedNote.id);
