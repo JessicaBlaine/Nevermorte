@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
 
   namespace :api, defaults: {format: :json} do
-    resources :notes, except: [:new, :edit]
+    resources :tags, only: :index
+    resources :notes, except: [:new, :edit] do
+      resources :tags, only: [:destroy, :create]
+    end
     resources :notebooks, except: [:new, :edit]
   end
 end
