@@ -2,6 +2,7 @@ const React = require('react');
 
 const NotebookStore = require('../../stores/notebook_store');
 const NotebookActions = require('../../actions/notebook_actions');
+const hashHistory = require('react-router').hashHistory;
 
 const NotebookEdit = React.createClass({
   getInitialState: function() {
@@ -43,9 +44,13 @@ const NotebookEdit = React.createClass({
     });
 
   },
+  handleDelete() {
+    NotebookActions.destroyNotebook(this.props.notebook.id);
+    hashHistory.push('/home');
+  },
   openForm() {
     this.setState({
-      form: <form className="notebook-edit" >
+      form: <form onSubmit={this.saveChanges} className="notebook-edit" >
         <div className="content">
           <div className="symbol"/>
           <h2>NOTEBOOK INFO</h2>
@@ -61,12 +66,13 @@ const NotebookEdit = React.createClass({
           </div>
 
           <div className="delete">
-            <a>Delete notebook</a>
+            <a onClick={this.handleDelete}>Delete notebook</a>
           </div>
 
           <div className="button-container">
             <button onClick={this.closeForm}>Cancel</button>
-            <button disabled={this.state.disabled}
+            <button type="submit"
+                    disabled={this.state.disabled}
                     className="update"
                     onClick={this.saveChanges}>Save changes</button>
           </div>

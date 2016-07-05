@@ -47,8 +47,9 @@ const NotebookForm = React.createClass({
                placeholder="Title your notebook"/>
 
         <div className="button-container">
-          <button onClick={this.closeForm}>Cancel</button>
-          <button disabled={this.state.disabled}
+          <button type="button" onClick={this.closeForm}>Cancel</button>
+          <button type="submit"
+                  disabled={this.state.disabled}
                   className="create">Create notebook</button>
         </div>
       </div>
