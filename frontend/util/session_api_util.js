@@ -1,9 +1,10 @@
 
 module.exports = {
-  logout() {
+  logout(onSuccess) {
     $.ajax({
       url: 'session',
-      method: 'DELETE'
+      method: 'DELETE',
+      success: onSuccess
     });
   }
 };

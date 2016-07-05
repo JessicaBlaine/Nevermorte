@@ -5,6 +5,7 @@ const NotebooksIndex = require('./notebooks/notebooks_index');
 const NoteForm = require('./notes/note_form');
 const NoteActions = require('../actions/note_actions');
 const NotebookStore = require('../stores/notebook_store');
+const SessionApiUtil = require('../util/session_api_util');
 
 
 const MainPage = React.createClass({
@@ -47,12 +48,15 @@ const MainPage = React.createClass({
     });
   },
   newNote() {
-    let notebookId = window.location.hash.match(/#\/notebooks\/(\d)/);
+    let notebookId = window.location.hash.match(/#\/notebooks\/(\d+)/);
     NoteActions.createNote({
       title: "Name your Note",
       body: "and type!",
       notebook_id: notebookId ? notebookId[1] : 1
     });
+  },
+  logout() {
+    SessionApiUtil.logout(hashHistory.push.bind(this, "/"));
   },
   render() {
     return <div className="main-page">
@@ -74,6 +78,12 @@ const MainPage = React.createClass({
         <div className={this.state.notebookButton}
              onClick={this.toggleButtons}>
           <button className="notebook" />
+        </div>
+
+        <div className="user-icon">
+          <div className="logout">
+            <div onClick={this.logout} />
+          </div>
         </div>
       </div>
 

@@ -62,13 +62,17 @@ const NotebookIndexItem = React.createClass({
     hashHistory.push(`/notebooks/${this.props.params.notebookId}/edit`);
   },
   render() {
-    let noteBook = this.state.notebook;
-    let title = noteBook ? noteBook.title : "";
+    let notebook = this.state.notebook;
+    let title = "";
+    if (notebook) {
+        title = notebook.title;
+        title = title.length <= 20 ? title : title.slice(0, 20) + "...";
+    }
     return <div className="notes-index-container">
       <div>
         <header>
           <h1>{title}<span className="updated">{this.state.updated}</span></h1>
-          <NotebookEdit notebook={noteBook}/>
+          <NotebookEdit notebook={notebook}/>
           <span>{this.state.notes.length + " notes"}</span>
 
         </header>
