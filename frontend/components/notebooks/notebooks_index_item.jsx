@@ -41,10 +41,10 @@ const NotebookIndexItem = React.createClass({
     setTimeout(this.setState.bind(this, { updated: "" }), 3000);
     const notes = NoteStore.all(NoteConstants.ASC_UPDATED);
     let selectedNote = notes[0];
-    if (this.state.selectedNote) {
-      const foundNote = NoteStore.find(this.state.selectedNote.id);
-      if (foundNote) selectedNote = foundNote;
-    }
+    // if (this.state.selectedNote) {
+    //   const foundNote = NoteStore.find(this.state.selectedNote.id);
+    //   if (foundNote) selectedNote = foundNote;
+    // }
     this.setState({
                   notes: notes,
                   selectedNote: selectedNote,
