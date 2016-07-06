@@ -6,6 +6,7 @@ const NoteForm = require('./notes/note_form');
 const NoteActions = require('../actions/note_actions');
 const NotebookStore = require('../stores/notebook_store');
 const SessionApiUtil = require('../util/session_api_util');
+const TagsIndex = require('./tags/tags_index');
 
 
 const MainPage = React.createClass({
@@ -14,6 +15,8 @@ const MainPage = React.createClass({
       notebooks: "hidden",
       notebookButton: "notebook",
       notesButton: "notes",
+      tags: "hidden",
+      tagsButton: "tags",
       noteForm: ""
     };
   },
@@ -24,28 +27,32 @@ const MainPage = React.createClass({
       notebookButton: isHidden ? "notebook selected" : "notebook"
     });
   },
+  toggleTags() {
+    let isHidden = this.state.tags === "hidden";
+    this.setState({
+      tags: isHidden ? "revealed" : "hidden",
+      tagsButton: isHidden ? "tags selected" : "tags"
+    });
+  },
   toggleButtons(event) {
     const buttonPressed = event.currentTarget.className;
-    let notesButton = this.state.notesButton;
-    let notebooks = this.state.notebooks;
-    let notebookButton = this.state.notebooks;
+    this.setState({
+      notebooks: "hidden",
+      notebookButton: "notebook",
+      notesButton: "notes",
+      tags: "hidden",
+      tagsButton: "tags"
+    });
     if (buttonPressed.includes("notes")) {
-      notesButton = "notes selected";
-      notebooks = "hidden";
-      notebookButton = "notebook";
+      this.setState({ notesButton: "notes selected" });
       hashHistory.push('/notes');
     }
     if (buttonPressed.includes("notebook")) {
-      let isHidden = this.state.notebooks === "hidden";
-      notebooks = isHidden ? "revealed" : "hidden";
-      notebookButton = isHidden ? "notebook selected" : "notebook";
-      notesButton = "notes";
+      this.toggleNotebooks();
     }
-    this.setState({
-      notesButton: notesButton,
-      notebooks: notebooks,
-      notebookButton: notebookButton
-    });
+    if (buttonPressed.includes("tags")) {
+      this.toggleTags();
+    }
   },
   newNote() {
     let notebookId = window.location.hash.match(/#\/notebooks\/(\d+)/);
@@ -62,6 +69,8 @@ const MainPage = React.createClass({
     return <div className="main-page">
       <NotebooksIndex hidden={this.state.notebooks}
                       hide={this.toggleNotebooks}/>
+
+      <TagsIndex hidden={this.state.tags} hide={this.toggleTags}/>
 
       <div className="sidebar ">
 
@@ -88,6 +97,12 @@ const MainPage = React.createClass({
             <div onClick={this.logout} />
           </div>
         </div>
+
+        <div className={ this.state.tagsButton } onClick={this.toggleButtons}>
+          <button className="tags"/>
+          <span>TAGS</span>
+        </div>
+
       </div>
 
       {this.props.children}

@@ -68,5 +68,3 @@ const NotebooksIndex = React.createClass({
 });
 
 module.exports = NotebooksIndex;
-
-// <NotebookForm hidden={this.state.newForm} hide={this.closeNewForm}/>
