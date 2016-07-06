@@ -69,15 +69,18 @@ const MainPage = React.createClass({
 
         <div className="new-note" onClick={this.newNote}>
           <button className="new-note" />
+          <span>NEW NOTE</span>
         </div>
 
         <div className={this.state.notesButton} onClick={this.toggleButtons}>
           <button className="notes" />
+          <span>NOTES</span>
         </div>
 
         <div className={this.state.notebookButton}
              onClick={this.toggleButtons}>
           <button className="notebook" />
+          <span>NOTEBOOKS</span>
         </div>
 
         <div className="user-icon">

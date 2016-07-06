@@ -1,6 +1,23 @@
 
 @import 'colors';
 @import 'hover_transition';
+@import 'ease_transition';
+
+.button-text {
+    opacity: 0;
+    color: white;
+    text-align: center;
+    font-weight: 300;
+    position: absolute;
+    left: 50px;
+    top: 13px;
+    font-size: 14px;
+    width: 90px;
+    background: $base-color;
+    padding: 3px 2px;
+    margin-left: 2px;
+    transition: opacity 0.1s ease-out 0s;
+}
 
 .sidebar {
     background: white;
@@ -30,6 +47,9 @@
             background-size: cover;
             margin: 8px auto;
         }
+        span {
+            @extend .button-text;
+        }
     }
     div.new-note:hover {
         background: $light-color;
@@ -40,6 +60,10 @@
             background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467513766/add_1_ametm8.png );
             background-size: cover;
             margin: 8px auto;
+        }
+        span {
+            transition: opacity 0.2s ease-in 0.3s;
+            opacity: 1;
         }
     }
     div.notes {
@@ -58,6 +82,10 @@
             background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467589447/note_1_a6ltc6.png);
             background-size: cover;
         }
+        span {
+            @extend .button-text;
+            width: 60px;
+        }
     }
     div.notes:hover {
         background-color: $light-color;
@@ -67,6 +95,10 @@
             cursor: pointer;
             background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467590077/note_mqlkod.png );
             background-size: cover;
+        }
+        span {
+            transition: opacity 0.2s ease-in 0.3s;
+            opacity: 1;
         }
     }
     div.notes.selected {
@@ -101,6 +133,10 @@
             background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507238/notebook_1_yvdsjj.png);
             background-size: cover;
         }
+        span {
+            @extend .button-text;
+            width: 100px;
+        }
     }
 
     div.notebook:hover {
@@ -111,6 +147,10 @@
             cursor: pointer;
             background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507236/notebook_mqaxoa.png);
             background-size: cover;
+        }
+        span {
+            transition: opacity 0.2s ease-in 0.3s;
+            opacity: 1;
         }
     }
     div.notebook.selected {

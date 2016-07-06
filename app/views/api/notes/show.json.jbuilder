@@ -1,4 +1,6 @@
 
 json.partial! 'api/notes/note', note: @note
 
-json.tags @note.tags
+json.tags do
+  json.array! @note.tags, :name
+end

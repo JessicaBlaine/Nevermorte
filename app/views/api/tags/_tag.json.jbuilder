@@ -1,4 +1,2 @@
 
-json.extract! tag, :name
-
-json.notes tag.notes
+json.extract! tag, :name, :notes

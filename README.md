@@ -106,7 +106,7 @@ which has its own `Index` view.
 
 **Objective:** Notes can be tagged with multiple tags, and tags are searchable.
 
-- [ ] create `Tag` model and join table
+- [x] create `Tag` model and join table
 - build out API, Flux loop, and components for:
   - [ ] fetching tags for notebook
   - [ ] adding tags to notebook

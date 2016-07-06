@@ -1,9 +1,9 @@
 class Api::TagsController < ApplicationController
   def index
-    @tags = current_user.tags.where(
+    @tags = current_user.tags.includes(:notes).where(
                                     "name LIKE ?",
                                     "%" + params[:name] + "%"
-                                  ).limit(1)
+                                  ).uniq
     render :index
   end
 
@@ -16,20 +16,21 @@ class Api::TagsController < ApplicationController
       render "api/notes/show"
     else
       render json: {
-        errors: @tag.errors.full_messages + @tagging.errors.full_messages },
-        status: 422
+        errors: @tag.errors.full_messages + @tagging.errors.full_messages
+      }, status: 422
     end
   end
 
   def destroy
     @note = Note.find(params[:note_id])
-    @tag = @note.tags.find_by(name: params[:id])
     if @note.author_id == current_user.id
-      if @tag.destroy
+      if @note.tags.delete(Tag.find_by(name: params[:id]))
         render "api/notes/show"
+      else
+        render json: { errors: @note.errors.full_messages }, status: 422
       end
-      
+    else
+      render json: { errors: ["Unauthorized deletion attempt"] }, status: 403
     end
-    render json: { errors: ["Unauthorized deletion attempt"] }, status: 403
   end
 end

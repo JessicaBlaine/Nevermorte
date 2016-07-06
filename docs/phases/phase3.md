@@ -3,8 +3,8 @@
 ## Rails
 ### Models
 * [x] Notebook
-* [ ] Tag
-* [ ] Tagging
+* [x] Tag
+* [x] Tagging
 
 ### Controllers
 * [x] Api::NotebooksController (create, destroy, index, show, update)
@@ -12,7 +12,7 @@
 ### Views
 * [x] notebooks/index.json.jbuilder
 * [x] notebooks/show.json.jbuilder
-* [ ] tags/show.json.jbuilder
+* [x] tags/index.json.jbuilder
 
 ## Flux
 ### Views (React Components)

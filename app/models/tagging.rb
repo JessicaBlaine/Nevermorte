@@ -11,8 +11,9 @@
 
 class Tagging < ActiveRecord::Base
   validates :tag_id, :note_id, presence: true
+  validates :tag_id, uniqueness: { scope: :note_id }
 
-  belongs_to :tag
+  belongs_to :tag, inverse_of: :taggings
 
   belongs_to :note
 end
