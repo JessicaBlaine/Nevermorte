@@ -1,3 +1,84 @@
 // Place all the styles related to the Api::Tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'colors';
+@import 'hover_transition';
+
+div.tags-index {
+  height: 100%;
+  div.tags-container {
+    background: whitesmoke;
+    height: 100%;
+    width: 420px;
+    border-right: 3px solid $highlight-color;
+    h1 {
+            background: white;
+            padding: 20px;
+            font-weight: 300;
+            font-size: 32px;
+            color: dimgray;
+            border-bottom: 1px solid $highlight-color;
+        }
+    ul {
+      padding: 0 25px;
+      li {
+        margin: 10px 0;
+        div.tag {
+          display: inline-block;
+        }
+        div.name {
+          @include hover-transition;
+          display: inline-block;
+          padding: 4px;
+          border: 1px solid lightgrey;
+          border-radius: 5px;
+          background: white;
+        }
+        span {
+          margin: 0 5px;
+          display: inline-block;
+          font-size: 18px;
+          font-weight: 400;
+        }
+        span.count {
+          font-weight: 700;
+          color: $light-color;
+        }
+        .buttons {
+          opacity: 0;
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 5px;
+          button {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+          }
+          button.delete {
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507240/garbage_uvgop2.png);
+            background-size: cover;
+          }
+          button.delete:hover {
+            cursor: pointer;
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467507244/garbage-open_z9uek3.png);
+            background-size: cover;
+          }
+        }
+        div.tag:hover {
+          cursor: pointer;
+          div.name {
+            border: 1px solid $light-color;
+            background: $light-color;
+          }
+          span {
+            color: white;
+          }
+          div.buttons {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

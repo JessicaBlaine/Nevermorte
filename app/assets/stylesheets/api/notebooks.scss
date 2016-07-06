@@ -5,7 +5,7 @@
 @import "colors";
 @import 'hover_transition';
 
-div.notebooks-index.revealed {
+div.revealed {
     transition: background 0.3s ease-in-out 0s,
       left 0.4s ease-in-out 0s;
         transition-property: left, background;

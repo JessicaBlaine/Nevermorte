@@ -8,14 +8,14 @@
     text-align: center;
     font-weight: 300;
     position: absolute;
-    left: 50px;
+    left: -150px;
     top: 13px;
     font-size: 14px;
     width: 90px;
     background: $base-color;
     padding: 3px 2px;
     margin-left: 2px;
-    transition: opacity 0.1s ease-out 0s;
+    transition: opacity 0s ease-out 0s;
 }
 
 .toggle-button {
@@ -47,6 +47,7 @@
         background-size: cover;
     }
     span {
+        left: 50px;
         transition: opacity 0.2s ease-in 0.3s;
         opacity: 1;
     }
@@ -91,6 +92,7 @@
             margin: 8px auto;
         }
         span {
+            left: -150px;
             @extend .button-text;
         }
     }
@@ -105,6 +107,7 @@
             margin: 8px auto;
         }
         span {
+          left: 50px;
             transition: opacity 0.2s ease-in 0.3s;
             opacity: 1;
         }

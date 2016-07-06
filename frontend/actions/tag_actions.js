@@ -19,7 +19,7 @@ module.exports = {
     TagsApiUtil.destroyTag(
                            noteId,
                            tagName,
-                           NoteActions.receiveSingleNote,
+                           this.removeTag.bind(this),
                            this.handleError
                          );
   },
@@ -28,6 +28,10 @@ module.exports = {
       actionType: TagConstants.receiveAllTags,
       tags: tags
     });
+  },
+  removeTag(note) {
+    this.fetchTags("");
+    NoteActions.receiveSingleNote(note);
   },
   handleError(error) {
 
