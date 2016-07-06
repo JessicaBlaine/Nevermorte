@@ -49,6 +49,6 @@
 - `GET /api/tags`
   - includes query param for typeahead suggestions
 - `POST /api/notes/:note_id/tags`: add tag to note by name
-  - if note doesn't already exist, it will be created
+  - if tag doesn't already exist, it will be created
 - `DELETE /api/notes/:note_id/tags/:tag_name`: remove tag from note by
   name

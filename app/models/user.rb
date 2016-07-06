@@ -25,6 +25,8 @@ class User < ActiveRecord::Base
   has_many :notebooks,
     foreign_key: :author_id
 
+  has_many :tags, through: :notes
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     return user if user && user.is_password?(password)
