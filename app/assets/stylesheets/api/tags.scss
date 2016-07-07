@@ -12,21 +12,37 @@ div.tags-index {
     height: 100%;
     width: 420px;
     border-right: 3px solid $highlight-color;
-    h1 {
-            background: white;
-            padding: 20px;
-            font-weight: 300;
-            font-size: 32px;
-            color: dimgray;
-            border-bottom: 1px solid $highlight-color;
-        }
+    header {
+      background: white;
+      padding: 10px;
+      
+      border-bottom: 1px solid $highlight-color;
+      h1 {
+        font-weight: 300;
+        font-size: 32px;
+        color: dimgray;
+      }
+      input {
+        border: 1px solid lightgrey;
+        border-radius: 2px;
+        width: 90%;
+        margin: 20px auto 0 auto;
+        padding: 5px;
+        text-align: center;
+        font-size: 16px;
+      }
+    }
     ul {
       padding: 0 25px;
+      li:first-of-type div.name {
+        border: 1px solid $highlight-color;
+      }
       li {
         margin: 10px 0;
         div.tag {
           display: inline-block;
         }
+
         div.name {
           @include hover-transition;
           display: inline-block;

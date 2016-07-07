@@ -26,6 +26,9 @@ const NotesIndex = React.createClass({
     this.noteStoreListener.remove();
     this.selectionStoreListener.remove();
   },
+  componentWillReceiveProps() {
+    delete this.props;
+  },
   _noteChange() {
     const notes = NoteStore.all(NoteConstants.ASC_UPDATED);
     this.props.noteCount(notes.length);
