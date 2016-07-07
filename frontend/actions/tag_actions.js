@@ -2,6 +2,7 @@ const AppDispatcher = require('../dispatcher/dispatcher');
 const TagConstants = require('../constants/tag_constants');
 const TagsApiUtil = require('../util/tags_api_util');
 const NoteActions = require('./note_actions');
+const NoteConstants = require('../constants/note_constants');
 
 module.exports = {
   fetchTags(nameString) {
@@ -28,8 +29,18 @@ module.exports = {
   },
   receiveAllTags(tags) {
     AppDispatcher.dispatch({
-      actionType: TagConstants.receiveAllTags,
+      actionType: TagConstants.TAGS_RECEIVED,
       tags: tags
+    });
+  },
+  receiveTag(tag) {
+    AppDispatcher.dispatch({
+      actionType: TagConstants.TAG_RECEIVED,
+      tag: tag
+    });
+    AppDispatcher.dispatch({
+      actionType: NoteConstants.NOTES_RECEIVED,
+      notes: tag.notes
     });
   },
   removeTag(note) {

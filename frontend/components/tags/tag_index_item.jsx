@@ -9,12 +9,13 @@ const TagIndexItem = React.createClass({
       TagActions.destroyTag(note.id, this.props.tag.name);
     });
   },
-  openNotesIndex() {
+  showTag() {
     hashHistory.push(`/tags/${this.props.tag.name}`);
+    this.props.closeTags();
   },
   render() {
     return <div className="tag">
-      <div className="name" onClick={this.openNotesIndex}>
+      <div className="name" onClick={this.showTag}>
         <span>{this.props.tag.name}</span>
         <span className="count">{this.props.tag.notes.length}</span>
       </div>

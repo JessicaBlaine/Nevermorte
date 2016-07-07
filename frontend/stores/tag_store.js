@@ -15,10 +15,14 @@ const _resetTags = function(tags) {
 
 TagStore.__onDispatch = function(payload) {
   switch (payload.actionType) {
-    case TagConstants.RECEIVE_TAGS:
+    case TagConstants.TAGS_RECEIVED:
       _resetTags(payload.tags);
       TagStore.__emitChange();
-    break;
+      break;
+    case TagConstants.TAG_RECEIVED:
+      _tags[payload.tag.name] = payload.tag;
+      TagStore.__emitChange();
+      break;
   }
 };
 

@@ -27,7 +27,9 @@ const TagsIndex = React.createClass({
         <ul>
           {
             this.state.tags.map(tag => {
-              return <li key={ tag.name }><TagIndexItem tag={ tag }/></li>;
+              return <li key={ tag.name }>
+                <TagIndexItem closeTags={ this.props.hide } tag={ tag }/>
+              </li>;
             })
           }
         </ul>
