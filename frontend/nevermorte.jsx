@@ -10,7 +10,7 @@ const hashHistory = ReactRouter.hashHistory;
 // components
 const App = require('./components/app');
 const SplashPage = require('./components/splash_page');
-const NotesIndex = require('./components/notes/notes_index');
+const Index = require('./components/notes/index');
 const NotebooksIndexItem =
         require('./components/notebooks/notebooks_index_item');
 const NotebooksIndex = require('./components/notebooks/notebooks_index');
@@ -34,10 +34,10 @@ const appRouter = (
     <Route path="/" component={ App }>
       <IndexRoute component={ SplashPage }/>
       <Route path="home" component={ MainPage }>
-        <IndexRoute component={ NotesIndex }/>
+        <IndexRoute component={ Index }/>
       </Route>
       <Route component={ MainPage } >
-        <Route path="notes" component={ NotesIndex }/>
+        <Route path="notes" component={ Index }/>
         <Route path="notebooks/new" component={ NotebookForm }/>
         <Route path="notebooks/:notebookId" component={ NotebooksIndexItem }/>
       </Route>

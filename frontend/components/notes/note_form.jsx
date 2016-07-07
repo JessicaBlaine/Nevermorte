@@ -46,8 +46,9 @@ const NoteForm = React.createClass({
   },
   handleChange(attr, event) {
     clearTimeout(this.idleTimeout);
-    // save after 5 second idle
-    this.idleTimeout = setTimeout(this.saveChanges, 3000);
+    // save after form edited
+    this.idleTimeout = setTimeout(this.saveChanges, -1);
+
     this.setState({ [attr]: event.target.value });
   },
   handleSubmit(event) {

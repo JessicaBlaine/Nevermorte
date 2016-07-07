@@ -7,16 +7,24 @@ module.exports = {
     NotesApiUtil.fetchNotes(this.receiveAllNotes, this.onError);
   },
   getNote(id) {
-    NotesApiUtil.getNote(id, this.receiveSingleNote, this.onError);
+    NotesApiUtil.getNote(id, this.receiveSingleNote.bind(this), this.onError);
   },
   createNote(note) {
-    NotesApiUtil.createNote(note, this.receiveSingleNote, this.onError);
+    NotesApiUtil.createNote(note, this.receiveSingleNote.bind(this),
+                            this.onError);
   },
   editNote(note) {
-    NotesApiUtil.updateNote(note, this.receiveSingleNote, this.onError);
+    NotesApiUtil.updateNote(note, this.receiveSingleNote.bind(this),
+                            this.onError);
   },
   destroyNote(id) {
     NotesApiUtil.destroyNote(id, this.removeNote, this.onError);
+  },
+  selectNote(note) {
+    AppDispatcher.dispatch({
+      actionType: NoteConstants.NOTE_SELECTED,
+      note: note
+    });
   },
   receiveAllNotes(notes) {
     AppDispatcher.dispatch({
@@ -29,6 +37,7 @@ module.exports = {
       actionType: NoteConstants.NOTE_RECEIVED,
       note: note
     });
+    this.selectNote(note);
   },
   removeNote(note) {
     AppDispatcher.dispatch({
