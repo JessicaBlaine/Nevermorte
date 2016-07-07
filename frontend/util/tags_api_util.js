@@ -7,6 +7,14 @@ module.exports = {
       error: onError
     });
   },
+  getTag(name, onSuccess, onError) {
+    $.ajax({
+      url: `api/tags/${name}`,
+      method: 'GET',
+      success: onSuccess,
+      error: onError
+    });
+  },
   createTag(noteId, tag, onSuccess, onError) {
     $.ajax({
       url: `api/notes/${noteId}/tags`,

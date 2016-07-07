@@ -4,6 +4,7 @@ let _notes = {};
 const NoteStore = new Store(AppDispatcher);
 
 const NoteConstants = require('../constants/note_constants');
+const NoteActions = require('../actions/note_actions');
 
 const _resetNotes = function(notes) {
   _notes = {};
@@ -17,6 +18,9 @@ NoteStore.__onDispatch = function(payload) {
   switch (payload.actionType) {
     case NoteConstants.NOTES_RECEIVED:
       _resetNotes(payload.notes);
+      setTimeout(() => {
+        NoteActions.selectNote(NoteStore.all(NoteConstants.ASC_UPDATED)[0]);
+      }, 0);
       break;
     case NoteConstants.NOTE_RECEIVED:
       _notes[payload.note.id] = payload.note;

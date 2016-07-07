@@ -9,8 +9,10 @@ let _selectedNote = {};
 SelectionStore.__onDispatch = function(payload) {
   switch (payload.actionType) {
     case NoteConstants.NOTE_SELECTED:
-      _selectedNote = payload.note;
-      SelectionStore.__emitChange();
+      if (_selectedNote.id !== payload.note.id) {
+        _selectedNote = payload.note;
+        SelectionStore.__emitChange();
+      }
       break;
     default:
 

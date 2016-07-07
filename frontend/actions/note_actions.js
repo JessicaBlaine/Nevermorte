@@ -4,7 +4,7 @@ const NotesApiUtil = require('../util/notes_api_util');
 
 module.exports = {
   fetchNotes() {
-    NotesApiUtil.fetchNotes(this.receiveAllNotes, this.onError);
+    NotesApiUtil.fetchNotes(this.receiveAllNotes.bind(this), this.onError);
   },
   getNote(id) {
     NotesApiUtil.getNote(id, this.receiveSingleNote.bind(this), this.onError);

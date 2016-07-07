@@ -7,6 +7,7 @@ const NotebookActions = require('../../actions/notebook_actions');
 const NoteActions = require('../../actions/note_actions');
 const NoteConstants = require('../../constants/note_constants');
 // components
+const NotesIndex = require('../notes/notes_index');
 const NotesIndexItem = require('../notes/notes_index_item');
 const NoteForm = require('../notes/note_form');
 const NotebookEdit = require('./notebook_edit');
@@ -14,11 +15,10 @@ const NotebookEdit = require('./notebook_edit');
 const NotebookIndexItem = React.createClass({
   getInitialState: function() {
     return {
-      notes: NoteStore.all(NoteConstants.ASC_UPDATED),
       noteForm: undefined,
-      selectedNote: undefined,
       notebook: NotebookStore.find(this.props.params.notebookId),
-      updated: ""
+      updated: "",
+      noteCount: 0
     };
   },
   componentWillReceiveProps(newProps) {
@@ -38,17 +38,12 @@ const NotebookIndexItem = React.createClass({
   },
   _onChange() {
     console.log("changing");
-    setTimeout(this.setState.bind(this, { updated: "" }), 3000);
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(
+      this.setState.bind(this, { updated: "" }), 3000
+    );
     const notes = NoteStore.all(NoteConstants.ASC_UPDATED);
-    let selectedNote = notes[0];
-    // if (this.state.selectedNote) {
-    //   const foundNote = NoteStore.find(this.state.selectedNote.id);
-    //   if (foundNote) selectedNote = foundNote;
-    // }
     this.setState({
-                  notes: notes,
-                  selectedNote: selectedNote,
-                  noteForm: <NoteForm note={selectedNote}/>,
                   updated: "✓",
                   notebook: NotebookStore.find(this.props.params.notebookId)
               });
@@ -56,12 +51,14 @@ const NotebookIndexItem = React.createClass({
   openForm(note) {
     console.log("opening Form");
     this.setState({
-      noteForm: <NoteForm note={note}/>,
-      selectedNote: note
+      noteForm: <NoteForm note={note}/>
     });
   },
   editNotebook() {
     hashHistory.push(`/notebooks/${this.props.params.notebookId}/edit`);
+  },
+  setNoteCount(num) {
+    this.setState({ noteCount: num });
   },
   render() {
     let notebook = this.state.notebook;
@@ -75,21 +72,10 @@ const NotebookIndexItem = React.createClass({
         <header>
           <h1>{title}<span className="updated">{this.state.updated}</span></h1>
           <NotebookEdit notebook={notebook}/>
-          <span>{this.state.notes.length + " notes"}</span>
+          <span>{this.state.noteCount + " notes"}</span>
 
         </header>
-        <ul className="notes-index">
-          {
-            this.state.notes.map(note => {
-              let selected = this.state.selectedNote === note ? "selected" : "";
-              return <li key={note.id}
-                className={selected}
-                onClick={this.openForm.bind(null, note)}>
-                  <NotesIndexItem handleDelete={this.handleDelete} note={note}/>
-              </li>;
-            })
-          }
-        </ul>
+        <NotesIndex openForm={this.openForm} noteCount={this.setNoteCount}/>
       </div>
       {this.state.noteForm}
     </div>;

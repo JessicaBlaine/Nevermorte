@@ -7,6 +7,11 @@ class Api::TagsController < ApplicationController
     render :index
   end
 
+  def show
+    @tag = current_user.tags.includes(:notes).find_by(name: params[:id])
+    render :show
+  end
+
   def create
     @tag = Tag.find_by(name: params[:tag][:name])
     @tag = Tag.create(name: params[:tag][:name]) unless @tag

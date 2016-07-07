@@ -7,6 +7,9 @@ module.exports = {
   fetchTags(nameString) {
     TagsApiUtil.fetchTags(nameString, this.receiveAllTags, this.handleError);
   },
+  getTag(name) {
+    TagsApiUtil.getTag(name, this.receiveTag, this.handleError);
+  },
   createTag(noteId, tag) {
     TagsApiUtil.createTag(
                           noteId,

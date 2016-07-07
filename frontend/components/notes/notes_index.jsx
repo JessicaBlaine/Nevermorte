@@ -18,6 +18,9 @@ const NotesIndex = React.createClass({
     this.noteStoreListener = NoteStore.addListener(this._noteChange);
     this.selectionStoreListener =
       SelectionStore.addListener(this._selectionChange);
+      if (this.state.selectedNote.id) {
+        this.props.openForm(this.state.selectedNote);
+      }
   },
   componentWillUnmount() {
     this.noteStoreListener.remove();

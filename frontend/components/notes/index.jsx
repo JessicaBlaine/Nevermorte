@@ -11,12 +11,9 @@ const NotesIndex = require('./notes_index');
 
 const Index = React.createClass({
   getInitialState: function() {
-    const notes = NoteStore.all(NoteConstants.ASC_UPDATED);
     return {
-      notes: notes,
-      noteCount: notes.length,
-      index: "hidden",
-      noteForm: undefined
+      noteCount: 0,
+      noteForm: undefined,
     };
   },
   componentDidMount() {
