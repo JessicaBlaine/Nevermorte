@@ -4,9 +4,8 @@ const ReactQuill = require('react-quill');
 const NoteActions = require('../../actions/note_actions');
 const NoteStore = require('../../stores/note_store');
 const NoteTagsIndex = require('../tags/note_tags_index');
-const NotebookAssignmentForm = require(
-                                       '../notebooks/notebook_assignment_form'
-                                     );
+const NotebooksDropdown = require('../notebooks/notebooks_dropdown');
+
 
 
 const NoteForm = React.createClass({
@@ -52,17 +51,18 @@ const NoteForm = React.createClass({
   },
   render() {
     return <form className="note-form"
-                 onSubmit={this.handleSubmit}
-                 onBlur={this.saveChanges}>
+                 onSubmit={ this.handleSubmit }
+                 onBlur={ this.saveChanges }>
       <div className="inputs">
-        <input onChange={this.handleChange.bind(null, 'notebook_id')}
-          value={this.state.notebook_id}/>
+        <div className="upper-inputs">
+          <NotebooksDropdown onChange={ this.handleChange }
+                             selectedId={ this.state.notebook_id }/>
 
-        <input onChange={this.handleChange.bind(null, 'title')}
-               value={this.state.title}
-               className="title"/>
-
-        <NoteTagsIndex/>
+          <NoteTagsIndex/>
+        </div>
+        <input onChange={ this.handleChange.bind(null, 'title') }
+               value={ this.state.title }
+               className="title input"/>
       </div>
       <ReactQuill theme="snow"
                   onChange={ this.handleTextChange }

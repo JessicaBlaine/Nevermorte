@@ -16,7 +16,7 @@
     }
     z-index: 0;
     height: 100%;
-    display: flex;
+    // display: flex;
     div header {
         background: white;
         min-height: 65px;
@@ -132,37 +132,4 @@
         border: 3px solid $base-color;
         background-color: whitesmoke;
     }
-}
-
-.note-form {
-     height: 100%;
-     flex: 1;
-     min-width: 594px;
-     margin-left: 425px;
-     div.inputs {
-       position: absolute;
-       top: 50px;
-       ul.tags-index {
-           list-style: none;
-           display: inline-block;
-       }
-     }
-     input {
-       height: 20px;
-       border: 1px solid black;
-     }
-     .quill {
-         border: 1px solid lightgrey;
-         height: 100%;
-/*          overflow: hidden; */
-         .quill-toolbar {
-           padding-bottom: 40px;
-           height: 10%
-         }
-         .quill-contents {
-           height: 95%;
-           overflow-y: scroll;
-           padding-bottom: 20px;
-         }
-     }
 }

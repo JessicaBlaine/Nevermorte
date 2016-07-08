@@ -10,14 +10,14 @@ Nevermorte is a web application inspired by Evernote that will be build using Ru
 - [x] Hosting on Heroku
 - [x] New account creation, login, and guest/demo login
 - [ ] A production README, replacing this README
-- [ ] Notes
-  - [ ] Smooth, bug-free navigation
+- [x] Notes
+  - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
-- [ ] Notebooks for organizing notes
-  - [ ] Smooth, bug-free navigation
+  - [x] Adequate CSS styling
+- [x] Notebooks for organizing notes
+  - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Adequate CSS styling
 - [ ] Tags for notes
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
@@ -118,7 +118,7 @@ which has its own `Index` view.
 
 **objective:** Enable complex styling of notes.
 
-- [ ] Integrate `react-quill` (based on Quill.js).
+- [x] Integrate `react-quill` (based on Quill.js).
 - [ ] Use Rails helpers to sanitize HTML before rendering.
 - [ ] Style the new Quill elements.
 
@@ -128,7 +128,7 @@ which has its own `Index` view.
 
 - [ ] Get feedback on my UI from others
 - [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+- [x] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)
 - [ ] Shortcuts/favorites tag for notes
