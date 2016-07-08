@@ -66,7 +66,7 @@
 .sidebar {
     background: white;
     border-right: 1px solid $highlight-color;
-    z-index: 5;
+    z-index: 50;
     position: fixed;
     width: 75px;
     height: 100%;
@@ -85,6 +85,7 @@
         border: 1px solid $highlight-color;
         @include hover-transition;
         button {
+          display: block;
             width: 34px;
             height: 34px;
             background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467513763/add_kacrjo.png);

@@ -1,15 +1,17 @@
 const React = require('react');
+const ReactQuill = require('react-quill');
+
 const NoteActions = require('../../actions/note_actions');
 const NoteStore = require('../../stores/note_store');
+const NoteTagsIndex = require('../tags/note_tags_index');
+const NotebookAssignmentForm = require(
+                                       '../notebooks/notebook_assignment_form'
+                                     );
+
 
 const NoteForm = React.createClass({
   getInitialState: function() {
-    let note;
-    if (this.props.note) {
-      note = this.props.note;
-    } else {
-      // note = { id: this.props.params.noteId };
-    }
+    let note = this.props.note;
     return {
       id: note.id,
       title: note.title,
@@ -17,22 +19,6 @@ const NoteForm = React.createClass({
       notebook_id: note.notebook_id
     };
   },
-  // componentDidMount() {
-  //   this.storeListener = NoteStore.addListener(this._onChange);
-  //   NoteActions.getNote(this.state.id);
-  // },
-  // _onChange() {
-  //   const note = NoteStore.find(this.state.id);
-  //   this.setState({
-  //     id: note.id,
-  //     title: note.title,
-  //     body: note.body,
-  //     notebook_id: note.notebook_id
-  //   });
-  // },
-  // componentWillUnmount() {
-  //   this.storeListener.remove();
-  // },
   componentWillReceiveProps(newProps) {
     const newNote = newProps.note;
     if (newNote) {
@@ -58,16 +44,31 @@ const NoteForm = React.createClass({
   saveChanges() {
     NoteActions.editNote(this.state);
   },
+  handleTextChange(value) {
+    clearTimeout(this.idleTimeout);
+    // save after form edited
+    this.idleTimeout = setTimeout(this.saveChanges, -1);
+    this.setState({ body: value });
+  },
   render() {
-    return <form className="note-form" onSubmit={this.handleSubmit} onBlur={this.saveChanges}>
-      <input onChange={this.handleChange.bind(null, 'notebook_id')}
-        value={this.state.notebook_id}/>
+    return <form className="note-form"
+                 onSubmit={this.handleSubmit}
+                 onBlur={this.saveChanges}>
+      <div className="inputs">
+        <input onChange={this.handleChange.bind(null, 'notebook_id')}
+          value={this.state.notebook_id}/>
 
-      <input onChange={this.handleChange.bind(null, 'title')}
-        value={this.state.title}/>
+        <input onChange={this.handleChange.bind(null, 'title')}
+               value={this.state.title}
+               className="title"/>
 
-      <textarea onChange={this.handleChange.bind(null, 'body')}
-        value={this.state.body}/>
+        <NoteTagsIndex/>
+      </div>
+      <ReactQuill theme="snow"
+                  onChange={ this.handleTextChange }
+                  value={ this.state.body }/>
+
+
     </form>;
   }
 });

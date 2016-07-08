@@ -21,8 +21,6 @@ body, figure, textarea header, h1, h2, h4, h5, p, li, ul, footer, form, input, i
     font: inherit;
     font-family: 'Lato', sans-serif;
     text-decoration: inherit;
-    list-style: none;
-    display: block;
 }
 
 * {
@@ -45,10 +43,6 @@ body, figure, textarea header, h1, h2, h4, h5, p, li, ul, footer, form, input, i
   height: 100px;
 }
 
-/* h1:hover, h2:hover, p:hover {
-  cursor: default;
-} */
-
 #root > div {
   height: 100%;
 }
@@ -60,7 +54,7 @@ input {
 .hidden {
     position: fixed;
     left: -450px;
-    z-index: 3;
+    z-index: 29;
     background: rgba(256, 256, 256, 0.0);
     transition: background 0.3s ease-in-out 0s,
       left 0.3s ease-in-out 0s;
@@ -68,6 +62,10 @@ input {
         transition-duration: 0.3s, 0.3s;
         transition-timing-function: ease-in-out, ease-in-out;
         transition-delay: .1s, 0s;
+}
+
+.revealed {
+  
 }
 
 

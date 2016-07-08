@@ -6,6 +6,9 @@
 @import 'hover_transition';
 
 div.tags-index {
+  li {
+    list-style: none;
+  }
   height: 100%;
   div.tags-container {
     background: whitesmoke;
@@ -15,7 +18,7 @@ div.tags-index {
     header {
       background: white;
       padding: 10px;
-      
+
       border-bottom: 1px solid $highlight-color;
       h1 {
         font-weight: 300;

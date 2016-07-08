@@ -5,21 +5,26 @@
 @import 'colors';
 @import 'hover_transition';
 
-.note-form {
-    height: 100%;
-}
+
 
 .notes-index-container {
+    div.index {
+        position: fixed;
+        height: 100%;
+        // z-index: 60;
+        margin-left: 75px;
+    }
     z-index: 0;
     height: 100%;
     display: flex;
     div header {
+        background: white;
         min-height: 65px;
         border-bottom: 1px solid $highlight-color;
         border-left: 1px solid $highlight-color;
         border-right: 1px solid $highlight-color;
         color: dimgrey;
-        margin-left: 75px;
+
         height: 10%;
         width: 350px;
         padding: 0;
@@ -49,13 +54,16 @@
 }
 
 .notes-index {
-    z-index: 2;
+  li {
+    list-style: none;
+  }
+    // z-index: 15;
     height: 90%;
     border-radius: 2px;
     background: whitesmoke;
     flex: none;
     width: 350px;
-    margin-left: 75px;
+    // margin-left: 75px;
     border-bottom: 1px solid $highlight-color;
     border-left: 1px solid $highlight-color;
     border-right: 1px solid $highlight-color;
@@ -127,16 +135,34 @@
 }
 
 .note-form {
+     height: 100%;
      flex: 1;
-     padding-left: 20px;
-     textarea {
-         width: 100%;
-         height: 90%;
-         border: none;
-         resize: none;
-         outline: none;
+     min-width: 594px;
+     margin-left: 425px;
+     div.inputs {
+       position: absolute;
+       top: 50px;
+       ul.tags-index {
+           list-style: none;
+           display: inline-block;
+       }
      }
      input {
-         height: 5%;
+       height: 20px;
+       border: 1px solid black;
+     }
+     .quill {
+         border: 1px solid lightgrey;
+         height: 100%;
+/*          overflow: hidden; */
+         .quill-toolbar {
+           padding-bottom: 40px;
+           height: 10%
+         }
+         .quill-contents {
+           height: 95%;
+           overflow-y: scroll;
+           padding-bottom: 20px;
+         }
      }
 }

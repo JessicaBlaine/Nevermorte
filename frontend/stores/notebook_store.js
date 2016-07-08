@@ -30,7 +30,7 @@ NotebookStore.__onDispatch = function(payload) {
 };
 
 NotebookStore.find = function(id) {
-  return _notebooks[id];
+  return Object.assign({}, _notebooks[id]);
 };
 
 NotebookStore.all = function() {

@@ -18,8 +18,9 @@ module.exports = {
         query: {
           presets: ['es2015', 'react']
         }
-      }
-    ]
+      },
+    ],
+    noParse: /node_modules\/quill\/dist/
   },
   devtool: 'source-maps',
   resolve: {

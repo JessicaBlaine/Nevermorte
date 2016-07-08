@@ -35,7 +35,7 @@ const TagNotesIndex = React.createClass({
   },
   render() {
     return <div className="notes-index-container">
-      <div>
+      <div className="index">
 
         <header>
           <h1>

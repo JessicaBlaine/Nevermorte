@@ -19,7 +19,7 @@
 * [x] NotebooksIndex
   - [x] NotebookIndexItem
 * [x] NotebookForm
-* [ ] SearchIndex
+* [x] SearchIndex
 
 ### Stores
 * [x] Notebook

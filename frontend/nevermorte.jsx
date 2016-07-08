@@ -17,7 +17,7 @@ const NotebooksIndex = require('./components/notebooks/notebooks_index');
 const MainPage = require('./components/main_page');
 const NoteForm = require('./components/notes/note_form');
 const NotebookForm = require('./components/notebooks/notebook_form');
-const NotebookEdit = require('./components/notebooks/notebook_edit');
+const EditForm = require('./components/notebooks/edit_form');
 const TagNotesIndex = require('./components/tags/tag_notes_index');
 // debugging
 const NoteApiUtil = window.NoteApi = require("./util/notes_api_util");
@@ -40,6 +40,7 @@ const appRouter = (
       <Route component={ MainPage } >
         <Route path="notes" component={ Index }/>
         <Route path="notebooks/new" component={ NotebookForm }/>
+        <Route path="notebooks/:notebookId/edit" component={ EditForm }/>
         <Route path="notebooks/:notebookId" component={ NotebooksIndexItem }/>
         <Route path="tags/:tagName" component={ TagNotesIndex }/>
       </Route>

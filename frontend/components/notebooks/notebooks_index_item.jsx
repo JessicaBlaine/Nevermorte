@@ -63,12 +63,12 @@ const NotebookIndexItem = React.createClass({
   render() {
     let notebook = this.state.notebook;
     let title = "";
-    if (notebook) {
+    if (notebook.title) {
         title = notebook.title;
         title = title.length <= 20 ? title : title.slice(0, 20) + "...";
     }
     return <div className="notes-index-container">
-      <div>
+      <div className="index">
         <header>
           <h1>{title}<span className="updated">{this.state.updated}</span></h1>
           <NotebookEdit notebook={notebook}/>
