@@ -55,7 +55,7 @@ const NoteForm = React.createClass({
                  onBlur={ this.saveChanges }>
       <div className="inputs">
         <div className="upper-inputs">
-          <NotebooksDropdown onChange={ this.handleChange }
+          <NotebooksDropdown handleChange={ this.handleChange }
                              selectedId={ this.state.notebook_id }/>
 
           <NoteTagsIndex/>
