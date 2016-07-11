@@ -65,7 +65,9 @@ const NoteForm = React.createClass({
           <NotebooksDropdown handleChange={ this.handleChange }
                              selectedId={ this.state.notebook_id }/>
 
-                           <NoteTagsIndex handleChange={ this.handleChange } noteId={ this.state.id }/>
+          <NoteTagsIndex handleChange={ this.handleChange }
+                        noteId={ this.state.id }/>
+
         </div>
         <input onChange={ this.handleChange.bind(null, 'title') }
                value={ this.state.title }

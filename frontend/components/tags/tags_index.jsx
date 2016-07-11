@@ -20,6 +20,9 @@ const TagsIndex = React.createClass({
   _onChange() {
     this.setState({ tags: TagStore.all() });
   },
+  componentWillReceiveProps(newProps) {
+    TagActions.fetchTags("");
+  },
   render() {
     return <div onClick={ this.props.hide }
                 className={ "tags-index " + this.props.hidden}>

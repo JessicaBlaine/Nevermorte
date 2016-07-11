@@ -2,6 +2,7 @@ const React = require('react');
 
 const TagActions = require('../../actions/tag_actions');
 const TagStore = require('../../stores/tag_store');
+const NoteStore = require('../../stores/note_store');
 
 const NotesIndex = require('../notes/notes_index');
 const NoteForm = require('../notes/note_form');
@@ -15,13 +16,14 @@ const TagNotesIndex = React.createClass({
     };
   },
   componentDidMount() {
-    // this.storeListener = TagStore.addListener(this._onChange);
+    // this.storeListener = NoteStore.addListener(this._onChange);
     TagActions.getTag(this.props.params.tagName);
   },
   // componentWillUnmount() {
   //   this.storeListener.remove();
   // },
   _onChange() {
+    TagActions.getTag(this.props.params.tagName);
     console.log("tag changing");
   },
   componentWillReceiveProps(nextProps) {
@@ -49,6 +51,7 @@ const TagNotesIndex = React.createClass({
 
       </div>
 
+      <div className="block"/>
       {this.state.noteForm}
 
     </div>;

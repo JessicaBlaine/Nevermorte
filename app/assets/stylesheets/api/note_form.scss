@@ -17,6 +17,10 @@
        margin-left: 15px;
        .upper-inputs {
          border-bottom: 1px solid $highlight-color;
+         height: 24px;
+         overflow: hidden;
+         position: relative;
+        //  overflow-x: visible;
        }
        .input {
         //  border: 1px solid black;
@@ -171,7 +175,56 @@
        }
        .tags-index {
          list-style: none;
-         font-size: 16px;
+         font-size: 14px;
+         display: inline-block;
+         margin-left: 15px;
+         position: absolute;
+        //  right: 0;
+         height: 24px;
+        //  overflow-x: hidden;
+        //  width: 100%;
+        //  text-align: right;
+         div.icon {
+           position: absolute;
+           left: -20px;
+           width: 18px;
+           height: 18px;
+           margin-top: 2px;
+           background: url(https://res.cloudinary.com/nevermorte/image/upload/c_scale,w_28/v1467840254/price-tag_vnwgnl.png);
+           background-size: cover;
+         }
+         ul {
+           display: inline-block;
+           height: 24px;
+           white-space: nowrap;
+
+          //  text-align: right;
+         }
+         li {
+           display: inline-block;
+           background: white;
+           margin: 1px 3px;
+           padding: 1px 5px;
+           border-radius: 3px;
+           border: 1px solid lightgrey;
+           input {
+             text-align: center;
+             width: 50px;
+             min-width: 50px;
+           }
+         }
+        //  .tag-form {
+        //    display: inline-block;
+        //   //  width: 50px;
+        //    input {
+        //      display: inline-block;
+        //      background: white;
+        //      margin: 1px 3px;
+        //      padding: 1px 5px;
+        //      border-radius: 3px;
+        //      border: 1px solid lightgrey;
+        //    }
+        //  }
        }
      }
      .quill {

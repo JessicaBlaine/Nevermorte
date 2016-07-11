@@ -1,6 +1,7 @@
 const AppDispatcher = require('../dispatcher/dispatcher');
 const NoteConstants = require('../constants/note_constants');
 const NotesApiUtil = require('../util/notes_api_util');
+const TagConstants = require('../constants/tag_constants');
 
 module.exports = {
   fetchNotes() {

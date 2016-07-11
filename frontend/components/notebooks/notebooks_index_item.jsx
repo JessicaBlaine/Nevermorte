@@ -35,6 +35,7 @@ const NotebookIndexItem = React.createClass({
   },
   componentWillUnmount() {
     this.storeListener.remove();
+    this.setState({ noteForm: undefined });
   },
   _onChange() {
     console.log("changing");
@@ -77,6 +78,8 @@ const NotebookIndexItem = React.createClass({
         </header>
         <NotesIndex openForm={this.openForm} noteCount={this.setNoteCount}/>
       </div>
+
+      <div className="block"/>
       {this.state.noteForm}
     </div>;
   }
