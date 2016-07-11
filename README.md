@@ -22,10 +22,10 @@ Nevermorte is a web application inspired by Evernote that will be build using Ru
   - [ ] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
   - [ ] Adequate CSS styling
-- [ ] Rich Text Editing of notes
-  - [ ] Smooth, bug-free navigation
+- [x] Rich Text Editing of notes
+  - [x] Smooth, bug-free navigation
   - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+  - [x] Adequate CSS styling
 
 ## Design Docs
 * [View Wireframes][views]

@@ -95,6 +95,7 @@ const MainPage = React.createClass({
         <div className="user-icon">
           <div className="logout">
             <div onClick={this.logout} />
+            <span>LOGOUT</span>
           </div>
         </div>
 

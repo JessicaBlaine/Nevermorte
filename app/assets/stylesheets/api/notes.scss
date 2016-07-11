@@ -8,6 +8,11 @@
 
 
 .notes-index-container {
+    div.block {
+        -webkit-flex: none;
+        flex: none;
+        width: 425px;
+    }
     div.index {
         position: fixed;
         height: 100%;
@@ -16,7 +21,7 @@
     }
     z-index: 0;
     height: 100%;
-    // display: flex;
+    display: flex;
     div header {
         background: white;
         min-height: 65px;

@@ -121,6 +121,9 @@
             background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467589447/note_1_a6ltc6.png);
             background-size: cover;
         }
+        span {
+          width: 60px;
+        }
     }
     div.notes:hover {
         button {
@@ -168,6 +171,41 @@
       button {
         background: url(https://res.cloudinary.com/nevermorte/image/upload/c_scale,w_64/v1467840254/price-tag_1_xpnqwe.png);
         background-size: cover;
+      }
+    }
+    div.logout {
+      z-index: 7;
+      position: fixed;
+      left: 12px;
+      bottom: 10px;
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+      border: 1px solid $highlight-color;
+      @include hover-transition;
+      div {
+        width: 42px;
+        height: 42px;
+        margin: 3px auto;
+        background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467744473/logout_dwgkgo.png);
+        background-size: cover;
+        color: white;
+      }
+      span {
+        @extend .button-text;
+        width: 80px;
+      }
+    }
+    div.logout:hover {
+      background: $light-color;
+      div {
+        background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467744748/logout2_ezvydp.png);
+        background-size: cover;
+      }
+      span {
+        left: 50px;
+        transition: opacity 0.2s ease-in 0.3s;
+        opacity: 1;
       }
     }
 }

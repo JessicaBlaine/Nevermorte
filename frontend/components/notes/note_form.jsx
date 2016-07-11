@@ -12,6 +12,7 @@ const NoteForm = React.createClass({
   getInitialState: function() {
     let note = this.props.note;
     return {
+      note: note,
       id: note.id,
       title: note.title,
       body: note.body,
@@ -20,14 +21,18 @@ const NoteForm = React.createClass({
   },
   componentWillReceiveProps(newProps) {
     const newNote = newProps.note;
+    const callBack = function() {
+      this.setState({ body: newNote.body });
+    };
     if (newNote) {
       this.setState({
-        id: newNote.id,
-        title: newNote.title,
-        body: newNote.body,
-        notebook_id: newNote.notebook_id
-      });
+                     title: newNote.title,
+                     id: newNote.id,
+                     body: "",
+                     notebook_id: newNote.notebook_id
+                   }, callBack );
     }
+
   },
   handleChange(attr, event) {
     clearTimeout(this.idleTimeout);
@@ -44,6 +49,8 @@ const NoteForm = React.createClass({
     NoteActions.editNote(this.state);
   },
   handleTextChange(value) {
+    // console.log(value);
+    // debugger;
     clearTimeout(this.idleTimeout);
     // save after form edited
     this.idleTimeout = setTimeout(this.saveChanges, -1);
@@ -58,7 +65,7 @@ const NoteForm = React.createClass({
           <NotebooksDropdown handleChange={ this.handleChange }
                              selectedId={ this.state.notebook_id }/>
 
-          <NoteTagsIndex/>
+                           <NoteTagsIndex handleChange={ this.handleChange } noteId={ this.state.id }/>
         </div>
         <input onChange={ this.handleChange.bind(null, 'title') }
                value={ this.state.title }

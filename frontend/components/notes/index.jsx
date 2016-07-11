@@ -36,6 +36,8 @@ const Index = React.createClass({
         </header>
         <NotesIndex openForm={this.openForm} noteCount={this.setNoteCount}/>
       </div>
+
+      <div className="block"/>
       {this.state.noteForm}
     </div>;
   }
