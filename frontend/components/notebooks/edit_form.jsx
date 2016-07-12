@@ -7,7 +7,7 @@ const EditForm = React.createClass({
   getInitialState: function() {
     const notebook = NotebookStore.find(this.props.params.notebookId);
     return {
-      isHidden: "hidden",
+      isHidden: "hiddenNb",
       disabled: true,
       notebook: notebook,
       title: notebook.title,
@@ -34,7 +34,7 @@ const EditForm = React.createClass({
   },
   closeForm(event) {
     event.preventDefault();
-    this.setState({ isHidden: "hidden" });
+    this.setState({ isHidden: "hiddenNb" });
     setTimeout(() => {
       window.history.back();
     }, 100);
@@ -57,7 +57,7 @@ const EditForm = React.createClass({
   },
   render() {
     return <form onSubmit={this.saveChanges}
-                className={ "notebook-edit " }>
+                className={ "notebook-edit " + this.state.isHidden }>
       <div className="content">
         <div className="symbol"/>
         <h2>NOTEBOOK INFO</h2>

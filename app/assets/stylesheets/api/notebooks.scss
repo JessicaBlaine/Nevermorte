@@ -208,8 +208,14 @@ form.notebook-form.hidden {
         height: 22px;
     }
 }
+.notebook-edit.hiddenNb {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out 0.05s;
+}
 .notebook-edit {
+    transition: opacity 0.2s ease-in-out 0s;
     position: fixed;
+    opacity: 0.95;
     z-index: 100;
     top: 0;
     left: 0;

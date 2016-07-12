@@ -14,7 +14,6 @@ const TagForm = React.createClass({
   handleSubmit(event) {
     event.preventDefault();
     TagActions.createTag(this.props.noteId, this.state);
-    console.log("submitting");
   },
   handleChange(event) {
     this.setState({ name: event.target.value });

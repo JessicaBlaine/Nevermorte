@@ -56,7 +56,7 @@ const NotebookDropdown = React.createClass({
         <span className="hover-text">Move note</span>
       </div>
       <div className={ "dropdown-" + this.state.isHidden }>
-        <div className="search"><input onBlur={ this.closeDropdown }
+        <div className="search"><input onBlur={ this.openDropdown }
                     ref="searchBar"
                     placeholder="🔍 Find a notebook"/></div>
         <ul>

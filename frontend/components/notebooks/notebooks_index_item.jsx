@@ -38,7 +38,6 @@ const NotebookIndexItem = React.createClass({
     this.setState({ noteForm: undefined });
   },
   _onChange() {
-    console.log("changing");
     clearTimeout(this.timeout);
     this.timeout = setTimeout(
       this.setState.bind(this, { updated: "" }), 3000
@@ -50,7 +49,6 @@ const NotebookIndexItem = React.createClass({
               });
   },
   openForm(note) {
-    console.log("opening Form");
     this.setState({
       noteForm: <NoteForm note={note}/>
     });

@@ -8,8 +8,11 @@ const NotesIndexItem = React.createClass({
     NoteActions.destroyNote(this.props.note.id);
   },
   render() {
-      let body = this.props.note.body;
-      body = body.length <= 90 ? body : body.slice(0, 90) + "...";
+    let body = this.props.note.body;
+    const div = document.createElement("div");
+    div.innerHTML = body;
+    body = div.textContent || div.innerText || "";
+    body = body.length <= 90 ? body : body.slice(0, 90) + "...";
     return <div>
       <button onClick={this.handleDelete}></button>
       <h4>{this.props.note.title}</h4>
