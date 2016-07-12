@@ -8,8 +8,9 @@ const TagForm = require('./tag_form');
 
 const NoteTagsIndex = React.createClass({
   getInitialState: function() {
+    let tags = NoteStore.find(this.props.noteId).tags;
     return {
-      tags: []
+      tags: tags ? tags.reverse() : []
     };
   },
   componentDidMount() {
