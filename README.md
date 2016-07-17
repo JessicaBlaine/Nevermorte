@@ -108,11 +108,11 @@ which has its own `Index` view.
 
 - [x] create `Tag` model and join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching tags for note
-  - [ ] adding tags to note
-  - [ ] creating tags while adding to note
-  - [ ] searching notes by tag
-- [ ] Style new elements
+  - [x] fetching tags for note
+  - [x] adding tags to note
+  - [x] creating tags while adding to note
+  - [x] searching notes by tag
+- [x] Style new elements
 
 ### Phase 7: Allow Complex Styling in Notes (0.5 days, W2 F 12pm)
 

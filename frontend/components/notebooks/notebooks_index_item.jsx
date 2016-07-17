@@ -42,7 +42,7 @@ const NotebookIndexItem = React.createClass({
     this.timeout = setTimeout(
       this.setState.bind(this, { updated: "" }), 3000
     );
-    const notes = NoteStore.all(NoteConstants.ASC_UPDATED);
+    // const notes = NoteStore.all(NoteConstants.ASC_UPDATED);
     this.setState({
                   updated: "✓",
                   notebook: NotebookStore.find(this.props.params.notebookId)

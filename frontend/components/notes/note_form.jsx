@@ -26,6 +26,7 @@ const NoteForm = React.createClass({
     };
     if (newNote) {
       this.setState({
+                     note: newNote,
                      title: newNote.title,
                      id: newNote.id,
                      body: "",

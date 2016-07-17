@@ -17,6 +17,7 @@ const _resetNotes = function(notes) {
 NoteStore.__onDispatch = function(payload) {
   switch (payload.actionType) {
     case NoteConstants.NOTES_RECEIVED:
+      // debugger;
       _resetNotes(payload.notes);
       setTimeout(() => {
         NoteActions.selectNote(NoteStore.all(NoteConstants.ASC_UPDATED)[0]);

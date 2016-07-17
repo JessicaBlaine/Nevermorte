@@ -22,7 +22,7 @@ const NoteTagsIndex = React.createClass({
   },
   _onChange() {
     let tags = NoteStore.find(this.props.noteId).tags;
-    this.setState({ tags: tags ? tags.reverse() : [] });
+    if (tags) this.setState({ tags: tags ? tags.reverse() : [] });
   },
   render() {
     return <div className="tags-index input">
