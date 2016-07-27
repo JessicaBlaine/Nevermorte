@@ -14,6 +14,9 @@ class Api::NotesController < ApplicationController
   def create
     @note = Note.new(note_params)
     @note.author_id = current_user.id
+    if @note.notebook_id == ""
+      @note.notebook_id = Notebook.find_by(author_id: current_user.id).id
+    end
     if @note.save
       render :show
     else

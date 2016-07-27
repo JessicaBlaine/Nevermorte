@@ -59,7 +59,7 @@ const MainPage = React.createClass({
     NoteActions.createNote({
       title: "Name your Note",
       body: "and type!",
-      notebook_id: notebookId ? notebookId[1] : 1
+      notebook_id: notebookId ? notebookId[1] : null
     });
   },
   logout() {

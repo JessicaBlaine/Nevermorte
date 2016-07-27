@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      Notebook.create!(author_id: @user.id, title: "First Notebook")
       login!(@user)
       redirect_to "/#/home"
     else
