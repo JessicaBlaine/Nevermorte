@@ -61,6 +61,9 @@ const NoteForm = React.createClass({
     return <form className="note-form"
                  onSubmit={ this.handleSubmit }
                  onBlur={ this.saveChanges }>
+      <ReactQuill theme="snow"
+                  onChange={ this.handleTextChange }
+                  value={ this.state.body }/>
       <div className="inputs">
         <div className="upper-inputs">
           <NotebooksDropdown handleChange={ this.handleChange }
@@ -74,9 +77,7 @@ const NoteForm = React.createClass({
                value={ this.state.title }
                className="title input"/>
       </div>
-      <ReactQuill theme="snow"
-                  onChange={ this.handleTextChange }
-                  value={ this.state.body }/>
+
 
 
     </form>;

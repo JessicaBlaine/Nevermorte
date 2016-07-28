@@ -33,7 +33,8 @@ const NotebookDropdown = React.createClass({
     this.setState({ selectedNb: notebook });
     this.props.handleChange('notebook_id', { target: { value: notebook.id }});
   },
-  openDropdown() {
+  openDropdown(event) {
+    event.stopPropagation();
     this.setState({ isHidden: "revealed" }, () => {
       ReactDOM.findDOMNode(this.refs.searchBar).focus();
     });
@@ -56,7 +57,7 @@ const NotebookDropdown = React.createClass({
         <span className="hover-text">Move note</span>
       </div>
       <div className={ "dropdown-" + this.state.isHidden }>
-        <div className="search"><input onBlur={ this.openDropdown }
+        <div className="search"><input onBlur={ this.closeDropdown }
                     ref="searchBar"
                     placeholder="🔍 Find a notebook"/></div>
         <ul>

@@ -11,14 +11,14 @@
     //  margin-left: 425px;
      .inputs {
        width: 55%;
-       z-index: 10;
+       // z-index: 10;
        position: absolute;
        top: 10px;
        margin-left: 15px;
        .upper-inputs {
          border-bottom: 1px solid $highlight-color;
          height: 24px;
-         overflow: hidden;
+         overflow: visible;
          position: relative;
         //  overflow-x: visible;
        }

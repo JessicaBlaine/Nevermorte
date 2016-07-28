@@ -54,7 +54,7 @@ input {
 .hidden {
     position: fixed;
     left: -450px;
-    z-index: 29;
+    // z-index: 29;
     background: rgba(256, 256, 256, 0.0);
     transition: background 0.3s ease-in-out 0s,
       left 0.3s ease-in-out 0s;

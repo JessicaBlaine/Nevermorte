@@ -12,19 +12,19 @@ Nevermorte is a web application inspired by Evernote that will be build using Ru
 - [ ] A production README, replacing this README
 - [x] Notes
   - [x] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+  - [x] Adequate seed data to demonstrate the site's features
   - [x] Adequate CSS styling
 - [x] Notebooks for organizing notes
   - [x] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+  - [x] Adequate seed data to demonstrate the site's features
   - [x] Adequate CSS styling
-- [ ] Tags for notes
-  - [ ] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
-  - [ ] Adequate CSS styling
+- [x] Tags for notes
+  - [x] Smooth, bug-free navigation
+  - [x] Adequate seed data to demonstrate the site's features
+  - [x] Adequate CSS styling
 - [x] Rich Text Editing of notes
   - [x] Smooth, bug-free navigation
-  - [ ] Adequate seed data to demonstrate the site's features
+  - [x] Adequate seed data to demonstrate the site's features
   - [x] Adequate CSS styling
 
 ## Design Docs
@@ -119,15 +119,15 @@ which has its own `Index` view.
 **objective:** Enable complex styling of notes.
 
 - [x] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
+- [x] Use Rails helpers to sanitize HTML before rendering.
+- [x] Style the new Quill elements.
 
 ### Phase 8: Styling Cleanup and Seeding (1 day, W2 F 6pm + weekend as necessary)
 
 **objective:** Make the site feel more cohesive and awesome.
 
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
+- [x] Get feedback on my UI from others
+- [x] Refactor HTML classes & CSS rules
 - [x] Add modals, transitions, and other styling flourishes.
 
 ### Bonus Features (TBD)

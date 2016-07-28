@@ -67,6 +67,10 @@ const MainPage = React.createClass({
   },
   render() {
     return <div className="main-page">
+
+
+      {this.props.children}
+
       <NotebooksIndex hidden={this.state.notebooks}
                       hide={this.toggleNotebooks}/>
 
@@ -106,7 +110,8 @@ const MainPage = React.createClass({
 
       </div>
 
-      {this.props.children}
+
+
 
     </div>;
   }

@@ -64,9 +64,10 @@
 }
 
 .sidebar {
+    top: 0;
     background: white;
     border-right: 1px solid $highlight-color;
-    z-index: 50;
+    // z-index: 50;
     position: fixed;
     width: 75px;
     height: 100%;
@@ -174,7 +175,7 @@
       }
     }
     div.logout {
-      z-index: 7;
+      // z-index: 7;
       position: fixed;
       left: 12px;
       bottom: 10px;

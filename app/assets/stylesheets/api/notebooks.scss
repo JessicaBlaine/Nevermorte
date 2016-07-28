@@ -7,7 +7,7 @@
 
 div.revealed {
     transition: background 0.3s ease-in-out 0s,
-      left 0.4s ease-in-out 0s;
+      left 0.3s ease-in-out 0s;
         transition-property: left, background;
         transition-duration: 0.3s, 0.3s;
         transition-timing-function: ease-in-out, ease-in-out;
@@ -18,10 +18,20 @@ div.revealed {
     bottom: 0;
     left: 75px;
     right: 0;
-    z-index: 30;
+    // z-index: 30;
+}
+.notebooks-index.hidden {
+  top: 0;
+  transition: background 0.3s ease-in-out 0s,
+    left 0.3s ease-in-out 0s;
+      transition-property: left, background;
+      transition-duration: 0.3s, 0.3s;
+      transition-timing-function: ease-in-out, ease-in-out;
+      transition-delay: 0s, 0.1s;
 }
 
 div.notebooks-index {
+
     li {
       list-style: none;
     }
@@ -29,7 +39,7 @@ div.notebooks-index {
     div {
         background: whitesmoke;
         border-right: 3px solid $highlight-color;
-        z-index: 30;
+        // z-index: 30;
         width: 420px;
         height: 100%;
         h1 {
@@ -46,15 +56,15 @@ div.notebooks-index {
             top: 25px;
             width: 32px;
             height: 32px;
-            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467509734/newNotebook2_yfsarr.png);
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467509732/newNotebook_kulkep.png);
             background-size: cover;
             border-bottom: 1px solid lightgrey;
             padding: 5px;
         }
         .create:hover {
             cursor: pointer;
-
-            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467509732/newNotebook_kulkep.png);
+            background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467509734/newNotebook2_yfsarr.png);
+            // background: url(https://res.cloudinary.com/nevermorte/image/upload/v1467509732/newNotebook_kulkep.png);
             background-size: cover;
             border-bottom: 2px solid $highlight-color;
         }

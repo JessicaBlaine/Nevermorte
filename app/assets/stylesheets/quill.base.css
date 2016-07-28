@@ -74,7 +74,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1000;
+  // z-index: 1000;
 }
 .ql-multi-cursor .cursor {
   margin-left: -1px;
@@ -120,7 +120,7 @@
   position: absolute;
   top: 0px;
   white-space: nowrap;
-  z-index: 2000;
+  // z-index: 2000;
 }
 .ql-tooltip a {
   cursor: pointer;
