@@ -5,6 +5,16 @@
 @import 'colors';
 @import 'hover_transition';
 
+.tags-index.hidden {
+  top: 0;
+  transition: background 0.3s ease-in-out 0s,
+    left 0.3s ease-in-out 0s;
+      transition-property: left, background;
+      transition-duration: 0.3s, 0.3s;
+      transition-timing-function: ease-in-out, ease-in-out;
+      transition-delay: 0s, 0.1s;
+}
+
 div.tags-index {
   li {
     list-style: none;
