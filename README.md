@@ -8,7 +8,7 @@
 Nevermorte is a web application inspired by Evernote that will be build using Ruby on Rails and React.js.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria:
 
 - [x] Hosting on Heroku
-- [x] New account creation, login, and guest/demo login
+<!-- - [x] New account creation, login, and guest/demo login -->
 - [ ] A production README, replacing this README
 - [x] Notes
   - [x] Smooth, bug-free navigation
